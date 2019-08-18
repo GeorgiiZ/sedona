@@ -16,11 +16,27 @@ export default class App extends Vue {}
 </script>
 
 <style>
+
+@font-face {
+  font-family: 'PT_Sans';
+  src: url(fonts/PT_Sans/PTSans-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT_Sans';
+  src: url(fonts/PT_Sans/PTSans-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'PT_Sans';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
+  }
+  
 </style>
