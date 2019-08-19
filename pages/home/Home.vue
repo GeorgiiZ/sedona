@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <div class="elem-test">
-            {{testCaption}}
+    <div class="home">
+        <div class="home__header">
+            <Header class="home__header-comp"/>
         </div>
     </div>
 </template>
@@ -9,19 +9,23 @@
 <script lang="ts">
 
 import { Vue, Component, Prop } from "vue-property-decorator";
+import Header from "../../shared/PageHeader";
 
-@Component
-export default class Layout extends Vue {
-    testCaption: string = "test";
+@Component({
+    components: { Header }
+})
+export default class Home extends Vue {
+    headerCaption: string = "sedona";
 }
 </script>
 
 <style>
 
-.elem-test {
-    height: 50px;
-    width: 50px;
-    background-color: blanchedalmond;
+.home__header-comp {
+}
+
+.home__header-caption {
+
 }
 
 </style>

@@ -32,11 +32,12 @@ export default class App extends Vue {}
 }
 
 #app {
-  font-family: 'PT_Sans';
+  font-family: 'PT_Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  }
+  display: flex;
+  color:black;
+}
   
 </style>
