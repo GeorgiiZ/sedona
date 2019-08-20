@@ -17,7 +17,7 @@ const sightPics = [
         sightName: 'дорога на север',
         photoSrc: images('./photo3desktopjpg.png'),
         author: 'Сергей',
-        likesCount: 143,
+        likesCount: 96,
     },
     {
         sightName: 'мост дьяола',

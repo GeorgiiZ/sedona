@@ -4,13 +4,24 @@
             <Header class="photos__header-comp"/>
             <span class="photos__header-caption">{{ headerCaption }}</span>
         </div>
-        <div class="photos-content">
-            <div class="photos-content__caption"> 
-                <div class="photos-content__caption-header" > фото и видео </div>
-                <div class="photos-content__caption-paragraph"> не можете решиться на путешестиве из-за курса? Фотографии помогут вам забыть о политике и экономике </div>
+        <div class="photos__content">
+            <div class="photos__content-caption"> 
+                <div class="photos__caption-header " > фото и видео </div>
+                <div class="photos__caption-paragraph"> не можете решиться на путешестиве из-за курса? Фотографии помогут вам забыть о политике и экономике </div>
             </div>
-            <div class="photos-content__galary">
-                <SightPhoto :sightPic="sightPics[0]"/>
+            <div class="photos__content-galary">
+                <span  v-for="(pic, key) in sightPics" :key="key">
+                    <SightPhoto :sightPic="pic"/>
+                </span>
+            </div>
+        </div>
+        <div class="photos__video">
+            <div class="photos__video-caption">
+                <div class="photos__caption-header " > все еще сомневаетесь </div>
+                <div class="photos__caption-paragraph"> смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз! </div>
+            </div>
+            <div class="photos__video-content">
+                <VideoPresent/>
             </div>
         </div>
     </div>
@@ -25,10 +36,11 @@ import { ISightPic } from "@/service/Sight";
 
 import Header from "@/shared/PageHeader.vue";
 import SightPhoto from "./components/SightPhoto.vue";
+import VideoPresent from "./components/Video.vue";
 
 
 @Component({
-    components: { Header, SightPhoto }
+    components: { Header, SightPhoto, VideoPresent }
 })
 export default class SedonaPhotos extends Vue {
     headerCaption: string = "sedona";
@@ -69,35 +81,53 @@ export default class SedonaPhotos extends Vue {
     position: absolute;    
     font-size: var(--font-size__extra-large);
     color: white;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 
-.photos-content {
-    margin-top: 100px;
-}
-
-.photos-content__caption {
-    width: 500px;
-    margin: 0 auto;
-}
-
-.photos-content__caption-header {
+.photos__caption-header {
     text-transform: uppercase;
     font-weight: bold;
     font-size: var(--font-size__large);
 }
 
-.photos-content__caption-paragraph {
+.photos__caption-paragraph {
     text-transform: uppercase;
     margin-top: 25px; 
     line-height: 180%;
 }
 
-.photos-content__galary {
+.photos__content {
+    margin-top: 100px;
+}
+
+.photos__content-caption {
+    width: 440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.photos__content-galary {
     margin-top:  60px;
+    display: flex;
     flex-wrap: wrap;
+}
+
+.photos__video {
+    margin: 100px auto 0 auto;
+    width: 780px;
+}
+
+.photos__video-caption {
+    width: 440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.photos__video-content {
+    margin-top: 60px;
+    margin-bottom: 100px; 
 }
 
 </style>
