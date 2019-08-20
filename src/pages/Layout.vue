@@ -32,14 +32,14 @@
                 </li>
                 <li class="footer-list__item
                            footer-list__item_middle" style="width: 33%;">
-                    <img src="../assets/icontwittersvg.png"/>
-                    <img class="footer-list__item-social" src="../assets/iconfacebooksvg.png"/>
-                    <img class="footer-list__item-social" src="../assets/iconyoutubesvg.png"/>
+                    <img src="@/assets/icontwittersvg.png"/>
+                    <img class="footer-list__item-social" src="@/assets/iconfacebooksvg.png"/>
+                    <img class="footer-list__item-social" src="@/assets/iconyoutubesvg.png"/>
                 </li>
                 <li class="footer-list__item
                            footer-list__item_last" style="width: 33%;">
                     РАЗРАБОТАНО
-                    <img class="footer-list__item-academy" src="../assets/htmlacademysvg.png"/>
+                    <img class="footer-list__item-academy" src="@/assets/htmlacademysvg.png"/>
                 </li>
             </ul>
         </footer>
@@ -60,12 +60,12 @@ export default class Layout extends Vue {
 
 .layout {
     background-color: white;
-    width: 1150px;
+    width: 1200px;
     margin: 0 auto;
     padding: 0 25px;
     display: flex;
     flex-direction: column;
-    --font-size__lower: 16px;
+    --font-size__lower: 14px;
     --font-size__middle: 18px;
     --font-size__large: 30px;
     --font-size__extra-large: 90px;
