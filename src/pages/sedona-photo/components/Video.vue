@@ -65,9 +65,9 @@ export default class VideoPresent extends Vue {
 }
 
 .baker {
-    background: url(C:/Users/GZennurov/Documents/vue-dev-projects/sedona/sedona/src/assets/sprite/sprite.svg#baker) no-repeat; 
-    width: 50px;
-    height: 50px;
+    /* background: url(C:/Users/GZennurov/Documents/vue-dev-projects/sedona/sedona/src/assets/sprite/sprite.svg#baker) no-repeat;  */
+    width: 1000px;
+    height: 1000px;
 }
 
 </style>
