@@ -7,8 +7,7 @@
                 Автор фото: {{ sightPic.author }}
             </div>
             <div class="sight-photo__info-likes">
-                <img class="sight-photo__info-likeImg" src="@/assets/likeiconsvg.png"
-                     @click="incLikes()"/>
+                <div class="sight-photo__info-likeImg" @click="incLikes()"></div>
                 {{ sightPic.likesCount }}
             </div>
         </div>
@@ -76,6 +75,9 @@ export default class SightPhoto extends Vue{
 .sight-photo__info-likeImg {
     margin-right: 5px;
     cursor: pointer;
+    width: 100px;
+    height: 100px;;
+    background: url(../../assets/sprite/sprite.svg#like-icon.svg (1));
 }
 
 .sight-photo__info-likeImg:active {
