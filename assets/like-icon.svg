@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 21" width="23" height="21">
-	<defs>
-		<image width="24" height="22" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyMiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjIyIj4KCTxkZWZzPgoJCTxjbGlwUGF0aCBjbGlwUGF0aFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNwMSI+CgkJCTxwYXRoIGQ9Ik0wIDBMMjQgMEwyNCAyMkwwIDIyWiIgLz4KCQk8L2NsaXBQYXRoPgoJPC9kZWZzPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuc2hwMCB7IGZpbGw6ICNmZmZmZmYgfSAKCTwvc3R5bGU+Cgk8ZyBpZD0iUGFnZSAxIiBjbGlwLXBhdGg9InVybCgjY3AxKSI+CgkJPHBhdGggaWQ9IlBhdGggMSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGFzcz0ic2hwMCIgZD0iTTE1LjMgMkMxNS41IDIuMyAxNS43IDIuNyAxNS43IDMuMUwxNS43IDMuNEwxNC43IDhMMjEgOEMyMi4xIDggMjMgOC45IDIzIDEwTDIyLjkgMTBMMjIuOSAxMkMyMi45IDEyLjIgMjIuOSAxMi41IDIyLjggMTIuN0wxOS44IDE5LjhDMTkuNSAyMC41IDE4LjggMjEgMTggMjFMOSAyMUM3LjkgMjEgNyAyMC4xIDcgMTlMNyA5QzcgOC40IDcuMiA3LjkgNy42IDcuNkwxNC4yIDFMMTUuMyAyWk01IDIxTDEgMjFMMSA5TDUgOUw1IDIxWk05LjAxIDkuMDFMOSA5LjAzTDkgMTlMMTggMTlMMjAuOSAxMi4wNkMyMC45IDEyLjA0IDIwLjkgMTIuMDIgMjAuOSAxMkwyMC45IDEwTDEyLjIyIDEwTDEyLjc1IDcuNThMMTMuMzggNC42NUw5LjAxIDkuMDFaTTIzIDEwTDIzIDEwLjA0TDIzIDEwWk0zIDExTDMgMTlMMyAxMVoiIC8+Cgk8L2c+Cjwvc3ZnPg=="/>
-	</defs>
-	<style>
-		tspan { white-space:pre }
-	</style>
-	<g id="photo">
-		<use id="like-icon.svg" href="#img1" transform="matrix(1,0,0,1,-1,-1.191)"/>
-	</g>
-</svg>
+<svg id="SvgjsSvg1178" width="23" height="21" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="355 1259 23 21"><defs id="SvgjsDefs1179"></defs><image id="SvgjsImage1180" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAVCAYAAACt4nWrAAABKElEQVRIS62Va3XCQBSEZxyAA3BAHRQHxUFRQKugddA6IA7AQXHQOgAH4GB6ZrvhhJBm89j9mWS/vTt35obouSQ9A9gAWJK8tG1nH3YEb+OeguQ6C7wGNvNAcjka3gA2c09yNQpeA/8AWETgK8nPwfAGsDX+jkA39DAI3gC2vk8AQkNJJs3w7weSFKuyFMF2kj4AvCQcZntasoIVSNhTVlR5Pi39LOkLwGMX+5qThFevLykFdrN9O69pL3iq4ni4bxcUyA33aLg2PDfcNrU0Ib3Z4JIMLTOwIrnPCbccluVEch50T1mxS1gkTQCc62MhF/wdwBsAB2he5iIX/AhgBuBmxifhKW/X3j+Q9Lj4S3uL5rs4qLry7/5Mht9EujpGO8T9enDT+P0FUoPNI8TmpgAAAAAASUVORK5CYII=" width="23" height="21" x="355" y="1259"></image></svg>

@@ -75,9 +75,9 @@ export default class SightPhoto extends Vue{
 .sight-photo__info-likeImg {
     margin-right: 5px;
     cursor: pointer;
-    width: 100px;
-    height: 100px;;
-    background: url(../../assets/sprite/sprite.svg#like-icon.svg (1));
+    height: 25px;
+    width:  50px;
+    background: url(../../../assets/sprite/sprite.svg#like-icon) no-repeat;
 }
 
 .sight-photo__info-likeImg:active {
