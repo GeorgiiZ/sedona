@@ -35,7 +35,7 @@ import { sightService } from "@/service/impl/SightService";
 import { ISightPic } from "@/service/Sight"; 
 
 import Header from "@/shared/PageHeader.vue";
-import SightPhoto from "./SightPhoto.vue";
+import SightPhoto from "./components/SightPhoto.vue";
 import VideoPresent from "./components/Video.vue";
 
 

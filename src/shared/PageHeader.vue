@@ -1,7 +1,9 @@
 <template>
     <div class="header">
         <img class="header__img-back" src="../assets/backdesktopjpg.png"/>
-        <img class="header__img-triangle" src="../assets/introtrianglesvg.png">
+        <svg class="header__img-triangle">
+            <use class="test" xlink:href="../assets/sprite/sprite.svg#intro-triangle"></use>
+        </svg>
     </div>
 </template>
 
@@ -16,6 +18,11 @@ export default class PageHeader extends Vue {
 
 <style>
 
+.test {
+    margin-top: auto; 
+    width: 100px;
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -24,11 +31,10 @@ export default class PageHeader extends Vue {
 }
 
 .header__img-triangle {
+    display: flex;
     position: absolute;
-    bottom: 0;
-    object-fit: cover;
     width: 100%;
-    z-index: 1;
+    bottom: 0;
 }
 
 .header__img-back {

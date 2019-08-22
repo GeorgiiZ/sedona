@@ -10,7 +10,8 @@
                         <router-link :to="{ name: 'SedonaPhoto'}"> фото и видео </router-link>
                     </li>
                     <li class="nav-list__item" style="width: 20%;">
-                         <router-link  class="nav-list__item-logo" :to="{ name: 'Home'}"/>
+                         <router-link class="nav-list__item-logo"  :to="{ name: 'Home'}">
+                         </router-link>
                     </li>
                     <li class="nav-list__item" style="width: 20%;">
                         <router-link :to="{ name: 'SedonaForm'}"> форма отзыва </router-link>
@@ -58,8 +59,13 @@ export default class Layout extends Vue {
 
 <style>
 
+.test {
+    width: 200px;
+    height: 200px;
+}
+
 .layout {
-    background-color: white;
+    background-color: blanchedalmond;
     width: 1200px;
     margin: 0 auto;
     padding: 0 25px;
@@ -104,10 +110,12 @@ export default class Layout extends Vue {
 }
 
 .nav-list__item-logo {
-    content: url(".././assets/logotypedesktopsvg.png");
     z-index: 1;
     position: absolute;
     top: 0;
+    width: 230px;
+    height: 200px;
+    background: url(../assets/sprite/sprite.svg#logotype-desktop) no-repeat;
 }
 
 a {
