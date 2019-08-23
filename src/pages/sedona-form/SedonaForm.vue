@@ -1,22 +1,23 @@
 <template>
-    <div class="form">
-        <div class="form__header">
-            <Header class="form__header-comp"/>
-            <span class="form__header-caption">{{ headerCaption }}</span>
+    <div class="form-page">
+        <div class="form-page__header">
+            <Header class="form-page__header-comp"/>
+            <span class="form-page__header-caption">{{ headerCaption }}</span>
         </div>
-         <div class="form__caption">
-            <div class="form__caption-header">оставьте свой отзыв</div>
-            <div class="form__caption-paragraph">помогите нашим отелям стать лучше! оставьте отзыв о них а также о посещенных ввами достопримечательностях</div>
+         <div class="form-page__caption">
+            <div class="form-page__caption-header">оставьте свой отзыв</div>
+            <div class="form-page__caption-paragraph">помогите нашим отелям стать лучше! оставьте отзыв о них а также о посещенных ввами достопримечательностях</div>
         </div>
-        <form class="form-content">
+        <form class="form">
             <div class="form__row">
                 <div class="form__impression">
-                    <div class="form-content__header">
-                        ваше впечатление:
+                    <div class="form__header">
+                        ваше общее впечатление:
                     </div>
-                    <div>
+                    <label class="form__radio">
+                        <input type="radio"/>
                         Скорее положительное
-                    </div>
+                    </label>
                     <div>
                         Скорее отрицательное
                     </div>
@@ -44,13 +45,13 @@ export default class SedonaForm extends Vue {
 
 <style>
 
-.form {
+.form-page {
     display: flex;
     flex-direction: column;
 }
 
 
-.form__header {
+.form-page__header {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -58,12 +59,12 @@ export default class SedonaForm extends Vue {
     align-items: center;
 }
 
-.form__header-comp {
+.form-page__header-comp {
     width: 100%;
     height: 300px;
 }
 
-.form__header-caption {
+.form-page__header-caption {
     position: absolute;    
     font-size: var(--font-size__extra-large);
     color: white;
@@ -72,31 +73,39 @@ export default class SedonaForm extends Vue {
     letter-spacing: 5px;
 }
 
-.form__caption {
+.form-page__caption {
     margin: 100px auto 0 auto;
     width: 500px;
     text-align: center;
 }
 
-.form__caption-header {
+.form-page__caption-header {
     text-transform: uppercase;
     font-weight: bold;
     font-size: var(--font-size__large);
 }
 
-.form__caption-paragraph {
+.form-page__caption-paragraph {
     text-transform: uppercase;
     margin-top: 25px; 
     line-height: 180%;
 }
 
-.form-content {
+.form {
     margin-top: 50px; 
     font-size: var(--font-size__middle);
 }
 
-.form-content__header {
+.form__header {
     text-transform: uppercase;
+    font-weight: bold;
+}
+
+.form__row {
+    display: inline-block; 
+}
+
+.form__radio {
     font-weight: bold;
 }
 
