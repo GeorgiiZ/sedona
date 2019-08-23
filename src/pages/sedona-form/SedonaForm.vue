@@ -15,7 +15,7 @@
                         ваше общее впечатление:
                     </div>
                     <label class="form__radio">
-                        <input type="radio"/>
+                        <input type="radio" v-mode="impressionChoice" value="positive"/>
                         Скорее положительное
                     </label>
                     <div>
@@ -40,6 +40,8 @@ import Header from "@/shared/PageHeader";
 })
 export default class SedonaForm extends Vue {
     headerCaption: string = "sedona";
+
+    impressionChoice: 
 }
 </script>
 
