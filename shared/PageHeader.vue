@@ -1,9 +1,10 @@
 <template>
     <div class="header">
         <img class="header__img-back" src="../assets/backdesktopjpg.png"/>
-        <svg class="header__img-triangle">
+        <!-- <svg class="header__img-triangle">
             <use class="test" xlink:href="../assets/sprite/sprite.svg#intro-triangle"></use>
-        </svg>
+        </svg> -->
+        <img class="header__img-triangle" src="../assets/introtrianglesvg.png"/>
     </div>
 </template>
 
