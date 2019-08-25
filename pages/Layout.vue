@@ -68,7 +68,7 @@ export default class Layout extends Vue {
     background-color: white;
     width: 1200px;
     margin: 0 auto;
-    padding: 0 25px;
+    /* padding: 0 25px; */
     display: flex;
     flex-direction: column;
     --font-size__lower: 14px;
@@ -76,6 +76,7 @@ export default class Layout extends Vue {
     --font-size__large: 30px;
     --font-size__extra-large: 90px;
     font-size: var(--font-size__lower);
+    box-shadow: 0px 4px 15px 1px #888;
 }
 
 .nav-list {
@@ -134,7 +135,7 @@ footer {
     display: flex;
     margin: 0;
     padding: 0;
-    width: 100%;
+    padding: 0 150px;
 }
 
 .footer-list__item {

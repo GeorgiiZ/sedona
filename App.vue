@@ -37,6 +37,7 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   color:black;
+  background-color: gainsboro;
 }
   
 </style>
