@@ -21,7 +21,7 @@ import { ISightPic } from "@/service/Sight";
 
 @Component
 export default class SightPhoto extends Vue{
-    @Prop({ default: null }) sightPic: ISightPic;
+    @Prop({ default: null }) sightPic!: ISightPic;
 
     incLikes() {
         this.sightPic.likesCount++;
