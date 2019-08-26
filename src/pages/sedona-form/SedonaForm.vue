@@ -92,27 +92,13 @@
             </div>
             <div class="form__row
                         form__sights">
-                <label class="form__checkbox">
-                    <input type="checkbox" id="1" vlaue="devil-brige" v-model="visitedSights"/>
+                <label class="form__checkbox" v-for="(sight, key) in allSights" :key="key" >
+                    <input type="checkbox" :vlaue="sight[0]" v-model="visitedSights"/>
                     <span class="form__checkbox-custom"></span>
-                    <span class="form__caption">Мост Дьявола</span>
-                </label>
-                <label class="form__checkbox">
-                    <input type="checkbox"  id="2" vlaue="bell-mountain" v-model="visitedSights"/>
-                    <span class="form__checkbox-custom"></span>
-                    <span class="form__caption">Гора-Колокол</span>
-                </label>
-                <label class="form__checkbox">
-                    <input type="checkbox"  id="3" vlaue="slide-park" v-model="visitedSights"/>
-                    <span class="form__checkbox-custom"></span>
-                    <span class="form__caption">Слайд-парк</span>
-                </label>
-                <label class="form__checkbox">
-                    <input type="checkbox"  id="4" vlaue="red-rocks" v-model="visitedSights"/>
-                    <span class="form__checkbox-custom"></span>
-                    <span class="form__caption">Красные скалы</span>
+                    <span class="form__caption">{{ sight[1] }}</span>
                 </label>
             </div>
+            <DivaderHeader />
         </form>
     </div>
 </template>
@@ -120,15 +106,24 @@
 <script lang="ts">
 
 import { Vue, Component, Prop } from "vue-property-decorator";
-import Header from "@/shared/PageHeader";
+import Header from "@/shared/PageHeader.vue";
+import DivaderHeader from "./components/DividerHeader";
+
 
 @Component({
-    components: { Header }
+    components: { Header, DivaderHeader }
 })
 export default class SedonaForm extends Vue {
     headerCaption: string = "sedona";
     impressionChoice: string = "positive";
-    visitedSights: string [] = <string[]>['devil-brige'] ;
+    allSights: Map<string, string> = new Map([
+        ['red-rocks', 'Красные скалы'],
+        ['slide-park', 'Слайд-парк'],
+        ['bell-mountain', 'Гора-Колокол'],
+        ['devil-brige', 'Мост Дьявола']
+    ]);
+    visitedSights: string [] = <string[]>[];
+
 }
 </script>
 
