@@ -67,22 +67,14 @@
                     <div class="form__textbox-input-custom
                                 form__textbox-input-phone">
                         <input type="phone" class="form__textbox-input" autocomplete="off" required/>
-                        <span class="form__textbox-svg">
-                            <svg class="form__textbox-svg_size">
-                                <use xlink:href="@/assets/sprite/sprite.svg#phone"></use>
-                            </svg>
-                        </span>
+                        <span class="form__textbox-phone"></span>
                     </div>
                 </div>
                 <div class="form__textbox" style="width: 50%;">
                     <label class="form__textbox-caption">электронная почта*:</label>
                     <div class="form__textbox-input-custom">
                         <input type="email" class="form__textbox-input" autocomplete="off" required/>
-                        <span class="form__textbox-svg">
-                            <svg class="form__textbox-svg_size">
-                                <use xlink:href="@/assets/sprite/sprite.svg#mail"></use>
-                            </svg>
-                        </span>
+                        <span class="form__textbox-mail"></span>
                     </div>
                 </div>
             </div>
@@ -101,9 +93,24 @@
             <div class="form__row
                         form__sights">
                 <label class="form__checkbox">
-                    <input type="checkbox" vlaue="devil-brige"/>
+                    <input type="checkbox" id="1" vlaue="devil-brige" v-model="visitedSights"/>
                     <span class="form__checkbox-custom"></span>
-                    <span class="form__caption">Скорее положительное</span>
+                    <span class="form__caption">Мост Дьявола</span>
+                </label>
+                <label class="form__checkbox">
+                    <input type="checkbox"  id="2" vlaue="bell-mountain" v-model="visitedSights"/>
+                    <span class="form__checkbox-custom"></span>
+                    <span class="form__caption">Гора-Колокол</span>
+                </label>
+                <label class="form__checkbox">
+                    <input type="checkbox"  id="3" vlaue="slide-park" v-model="visitedSights"/>
+                    <span class="form__checkbox-custom"></span>
+                    <span class="form__caption">Слайд-парк</span>
+                </label>
+                <label class="form__checkbox">
+                    <input type="checkbox"  id="4" vlaue="red-rocks" v-model="visitedSights"/>
+                    <span class="form__checkbox-custom"></span>
+                    <span class="form__caption">Красные скалы</span>
                 </label>
             </div>
         </form>
@@ -121,6 +128,7 @@ import Header from "@/shared/PageHeader";
 export default class SedonaForm extends Vue {
     headerCaption: string = "sedona";
     impressionChoice: string = "positive";
+    visitedSights: string [] = <string[]>['devil-brige'] ;
 }
 </script>
 
@@ -198,7 +206,7 @@ export default class SedonaForm extends Vue {
     width: 100%;
     display: flex;
     margin-top: 50px; 
-
+    justify-content: space-between;
 }
 
 .form__row-header {
@@ -311,18 +319,26 @@ export default class SedonaForm extends Vue {
     margin-right: 75px;
 } 
 
-.form__textbox-svg {
+.form__textbox-phone {
+    background: url("../../assets/sprite/sprite.svg#phone") no-repeat;
+    background-position: center;
+    background-size: 80%; 
     background-color: gainsboro;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 75px;
     height: 50px;
 }
 
-.form__textbox-svg_size{
-    width: 20px;
-    height: 20px;
+.form__textbox-mail {
+    background: url("../../assets/sprite/sprite.svg#mail") no-repeat;
+    background-position: center;
+    background-size: 80%; 
+    background-color: gainsboro;
+    width: 75px;
+    height: 50px;
+}
+
+.form__sights {
+
 }
 
 .form__sights input[type="checkbox"]{
@@ -334,6 +350,7 @@ export default class SedonaForm extends Vue {
 .form__checkbox {
     display: flex;
     align-items: center;
+    flex: 1;
 }
 
 .form__checkbox-custom {
@@ -344,9 +361,16 @@ export default class SedonaForm extends Vue {
 }
 
 .form__checkbox-custom {
+    width: 50px;
+    height: 50px;
+}
+
+.form__sights input:checked ~ .form__checkbox-custom {
     background: url("../../assets/sprite/sprite.svg#tick") no-repeat;
     width: 50px;
     height: 50px;
+    background-position: center;
+    background-color: #eee;
 }
 
 </style>
