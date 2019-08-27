@@ -32,7 +32,7 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 
 import { sightService } from "@/service/impl/SightService";
-import { ISightPic } from "@/service/Sight"; 
+import { Sight } from "@/service/models/Sight"; 
 
 import Header from "@/shared/PageHeader.vue";
 import SightPhoto from "./components/SightPhoto.vue";
@@ -44,7 +44,7 @@ import VideoPresent from "./components/Video.vue";
 })
 export default class SedonaPhotos extends Vue {
     headerCaption: string = "sedona";
-    sightPics:  ISightPic[] = <ISightPic[]>[];
+    sightPics:  Sight[] = <Sight[]>[];
 
     created() {
         this.getSightPics();

@@ -1,10 +1,10 @@
 import sightPics from '@/api/sightPics';
-import { ISightPic } from "../Sight"; 
+import { Sight } from "../models/Sight"; 
 
 class SightService {
 
     getSightPics(){
-        return sightPics as ISightPic [];
+        return sightPics as Sight [];
     }
 }
 // Export a singleton instance in the global namespace
