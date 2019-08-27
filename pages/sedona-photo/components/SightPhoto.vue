@@ -17,11 +17,11 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import { ISightPic } from "@/service/Sight";
+import { Sight } from "@/service/models/Sight";
 
 @Component
 export default class SightPhoto extends Vue{
-    @Prop({ default: null }) sightPic!: ISightPic;
+    @Prop({ default: null }) sightPic!: Sight;
 
     incLikes() {
         this.sightPic.likesCount++;
