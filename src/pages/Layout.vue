@@ -33,14 +33,14 @@
                 </li>
                 <li class="footer-list__item
                            footer-list__item_middle" style="width: 33%;">
-                    <img src="@/assets/icontwittersvg.png"/>
-                    <img class="footer-list__item-social" src="@/assets/iconfacebooksvg.png"/>
-                    <img class="footer-list__item-social" src="@/assets/iconyoutubesvg.png"/>
+                    <span class="footer-list__item-twitter" />
+                    <span class="footer-list__item-facebook" />
+                    <span class="footer-list__item-video" />
                 </li>
                 <li class="footer-list__item
                            footer-list__item_last" style="width: 33%;">
                     РАЗРАБОТАНО
-                    <img class="footer-list__item-academy" src="@/assets/htmlacademysvg.png"/>
+                    <span class="footer-list__item-academy"/>
                 </li>
             </ul>
         </footer>
@@ -163,7 +163,12 @@ footer {
 }
 
 .footer-list__item-academy {
-    margin-left: 20px; 
+    margin-left: 15px; 
+    width: 40px;
+    height: 40px;
+    background: url("../assets/sprite/sprite.svg#htmlacademy") no-repeat;
+    background-position: center center;
+    background-size: cover; 
 }
 
 .footer-list__item-tag {
@@ -172,8 +177,32 @@ footer {
     font-weight: 900;
 }
 
-.footer-list__item-social {
-    margin-left: 40px; 
+.footer-list__item-twitter {
+    background: white url("../assets/sprite/sprite.svg#twitter") no-repeat;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-color: #95c8d8;
 }
+
+.footer-list__item-facebook {
+    background: url("../assets/sprite/sprite.svg#facebook") no-repeat;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-color: #95c8d8;
+    margin-left: 15px;
+}
+
+.footer-list__item-video {
+    background: url("../assets/sprite/sprite.svg#video-footer") no-repeat;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-color: #95c8d8;
+    margin-left: 15px;
+}
+
+
 
 </style>
