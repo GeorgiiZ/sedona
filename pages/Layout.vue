@@ -3,20 +3,20 @@
         <header>
             <nav>
                 <ul class="nav-list">
-                    <li class="nav-list__item" style="width: 20%;">
+                    <li class="nav-list__item" >
                         <router-link :to="{ name: 'Home'}"> главная </router-link>
                     </li>
-                    <li class="nav-list__item" style="width: 20%;">
+                    <li class="nav-list__item" >
                         <router-link :to="{ name: 'SedonaPhoto'}"> фото и видео </router-link>
                     </li>
-                    <li class="nav-list__item" style="width: 20%;">
+                    <li  class="nav-list__item">
                          <router-link class="nav-list__item-logo"  :to="{ name: 'Home'}">
                          </router-link>
                     </li>
-                    <li class="nav-list__item" style="width: 20%;">
+                    <li class="nav-list__item" >
                         <router-link :to="{ name: 'SedonaForm'}"> форма отзыва </router-link>
                     </li>
-                    <li class="nav-list__item" style="width: 20%;">
+                    <li class="nav-list__item" >
                         html academy
                     </li>
                 </ul>
@@ -28,17 +28,17 @@
         <footer>
             <ul class="footer-list">
                 <li class="footer-list__item
-                           footer-list__item_first" style="width: 33%;">
+                           footer-list__item_first" >
                     <span class="footer-list__item-tag">#visitedsedona</span>
                 </li>
                 <li class="footer-list__item
-                           footer-list__item_middle" style="width: 33%;">
+                           footer-list__item_middle">
                     <span class="footer-list__item-twitter" />
                     <span class="footer-list__item-facebook" />
                     <span class="footer-list__item-video" />
                 </li>
                 <li class="footer-list__item
-                           footer-list__item_last" style="width: 33%;">
+                           footer-list__item_last">
                     РАЗРАБОТАНО
                     <span class="footer-list__item-academy"/>
                 </li>
@@ -88,6 +88,27 @@ export default class Layout extends Vue {
     width: 100%;
 }
 
+@media (max-device-width:480px){
+    .nav-list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-list__item {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: var(--font-size__lower);
+        cursor: pointer;
+        z-index: 1;
+        background-color: #2277AA;
+        margin: 0;
+        padding: 0;
+    }
+}
+    
+
 .nav-list__item {
     display: flex;
     justify-content: center;
@@ -95,7 +116,7 @@ export default class Layout extends Vue {
     font-weight: bold;
     font-size: var(--font-size__lower);
     margin: 20px 0px;
-    width: 186px;
+    width: 20%;
     cursor: pointer;
     z-index: 1;
 }
@@ -143,6 +164,7 @@ footer {
     display: flex;
     align-items: center;
     cursor: pointer;
+    width: 33%;
 }
 
 .footer-list__item:active {
