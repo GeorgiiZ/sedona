@@ -8,6 +8,12 @@ export class SedonaRecall{
         this.impression = '';
         this.impressionDesc = '';
         this.visitedSights = <string[]>[];
+    }
 
+    public validateData(): boolean {
+        if(this.impression && this.impressionDesc && this.visitedSights && this.visitedSights.length) {
+            return true;
+        }
+        return false;
     }
 }

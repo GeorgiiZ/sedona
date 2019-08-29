@@ -1,10 +1,9 @@
 <template>
     <div class="header">
         <img class="header__img-back" src="../assets/backdesktopjpg.png"/>
-        <!-- <svg class="header__img-triangle">
-            <use class="test" xlink:href="../assets/sprite/sprite.svg#intro-triangle"></use>
-        </svg> -->
-        <img class="header__img-triangle" src="../assets/introtrianglesvg.png"/>
+        <!-- <span class="header__img-triangle"/> -->
+        <div class="header__img-triangle">
+        </div>
     </div>
 </template>
 
@@ -32,11 +31,26 @@ export default class PageHeader extends Vue {
 }
 
 .header__img-triangle {
+    background: url("../assets/introtrianglesvg.png") no-repeat;
+    background-size: cover; 
+    background-position: center bottom; 
     display: flex;
     position: absolute;
+    font-size: 0;
+    bottom: -2px;
     width: 100%;
-    bottom: 0;
+    height: 55px;
 }
+
+.header__img-triangle-1 {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 55px;
+    width: 100%;
+    object-fit: none;
+}
+
 
 .header__img-back {
     height: 100%;

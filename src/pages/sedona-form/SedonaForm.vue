@@ -8,7 +8,7 @@
             <div class="form-page__caption-header">оставьте свой отзыв</div>
             <div class="form-page__caption-paragraph">помогите нашим отелям стать лучше! оставьте отзыв о них а также о посещенных ввами достопримечательностях</div>
         </div>
-        <form class="form">
+        <form class="form" method="GET" action="#">
             <div class="form__row">
                 <div class="form__impression">
                     <div class="form__header
@@ -27,15 +27,15 @@
                     </div>
                     <div class="form__textbox">
                         <label class="form__caption_light">имя*:</label>
-                        <input type="text" class="form__txt-input form__textbox-input" autocomplete="off" required/>
+                        <input type="text" class="form__txt-input form__textbox-input"  v-model="personData.name" autocomplete="off" required/>
                     </div>
                     <div class="form__textbox">
                         <label class="form__caption_light">фамилия*:</label>
-                        <input type="text" class="form__txt-input form__textbox-input" autocomplete="off" required/>
+                        <input type="text" class="form__txt-input form__textbox-input" v-model="personData.surname" autocomplete="off" required/>
                     </div>
                     <div class="form__textbox">
                         <label class="form__caption_light">отчество:</label>
-                        <input type="text" class="form__txt-input form__textbox-input" autocomplete="off" required/>
+                        <input type="text" class="form__txt-input form__textbox-input" v-model="personData.middlename" autocomplete="off" required/>
                     </div>
                 </div>
             </div>
@@ -45,14 +45,14 @@
                     <label class="form__caption_light">телефон*:</label>
                     <div class="form__textbox-input-custom
                                 form__textbox-input-phone">
-                        <input type="phone" class="form__txt-input form__textbox-input" autocomplete="off" required/>
+                        <input type="phone" class="form__txt-input form__textbox-input" v-model="personData.phoneNumber" autocomplete="off" required/>
                         <span class="form__textbox-phone"></span>
                     </div>
                 </div>
                 <div class="form__textbox" style="width: 50%;">
                     <label class="form__caption_light">электронная почта*:</label>
                     <div class="form__textbox-input-custom">
-                        <input type="email" class="form__txt-input form__textbox-input" autocomplete="off" required/>
+                        <input type="email" class="form__txt-input form__textbox-input" v-model="personData.email" autocomplete="off" required/>
                         <span class="form__textbox-mail"></span>
                     </div>
                 </div>
@@ -76,12 +76,13 @@
             <div class="form__row
                         form__row_bottom">
                 <button  type="submit" 
-                        class="form__submit"  @click.prevent="sendForm">отправить отзыв</button>
+                         class="form__submit"  @click.prevent="sendForm()">отправить отзыв</button>
                 <span class="form__caption_light
                              form__caption_light-bottom">*-обязательные поля</span>
             </div>
-            
         </form>
+        <ModalAccept v-show="modalAcceptVisiual" @onModalClosed="onModalAcceptClosed"/>
+        <ModalDenied v-show="modalDeniedVisual" @onModalClosed="modalDeniedVisual=false"/>
     </div>
 </template>
 
@@ -90,10 +91,16 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 import Header from "@/shared/PageHeader.vue";
 import DividerHeader from "./components/DividerHeader.vue";
+import ModalAccept from "./components/ModalAccept.vue";
+import ModalDenied from "./components/ModalDenied.vue";
+
+
+
 import { SedonaRecall } from "@/service/models/SedonaRecall";
+import { PersonalData } from "@/service/models/PersonalData";
 
 @Component({
-    components: { Header, DividerHeader }
+    components: { Header, DividerHeader, ModalAccept, ModalDenied }
 })
 export default class SedonaForm extends Vue {
     headerCaption: string = "sedona";
@@ -109,12 +116,28 @@ export default class SedonaForm extends Vue {
         ['devil-brige', 'Мост Дьявола']
     ]);
 
+    modalAcceptVisiual: boolean = false;
+    modalDeniedVisual: boolean = false;
     recall: SedonaRecall = new SedonaRecall();
+    personData: PersonalData = new PersonalData();
 
     sendForm(): void {
-        // if(this.)
+        if(this.recall.validateData() && this.personData.validateData()){
+            document.forms[0].submit();
+            this.modalAcceptVisiual = true;
+        }
+        else {
+            this.modalDeniedVisual = true; 
+        }
+    }
+    
+    onModalAcceptClosed(): void {
+        this.modalAcceptVisiual = false;
+        this.recall = new SedonaRecall();
+        this.personData = new PersonalData();
     }
 }
+
 </script>
 
 <style>

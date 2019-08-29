@@ -17,7 +17,7 @@
         </div>
         <div class="photos__video">
             <div class="photos__video-caption">
-                <div class="photos__caption-header " > все еще сомневаетесь </div>
+                <div class="photos__caption-header " > все еще сомневаетесь?</div>
                 <div class="photos__caption-paragraph"> смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз! </div>
             </div>
             <div class="photos__video-content">
