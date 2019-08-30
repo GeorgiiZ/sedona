@@ -56,7 +56,7 @@ export default class PageHeader extends Vue {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: 0 100%; 
+    object-position: 60% 100%; 
 }
 
 </style>

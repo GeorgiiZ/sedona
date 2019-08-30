@@ -4,24 +4,26 @@
             <Header class="photos__header-comp"/>
             <span class="photos__header-caption">{{ headerCaption }}</span>
         </div>
-        <div class="photos__content">
-            <div class="photos__content-caption"> 
-                <div class="photos__caption-header " > фото и видео </div>
-                <div class="photos__caption-paragraph"> не можете решиться на путешестиве из-за курса? Фотографии помогут вам забыть о политике и экономике </div>
+        <div class="photos-main">
+            <div class="photos__content">
+                <div class="photos__content-caption"> 
+                    <div class="photos__caption-header" > фото и видео </div>
+                    <div class="photos__caption-paragraph"> не можете решиться на путешестиве из-за курса? Фотографии помогут вам забыть о политике и экономике </div>
+                </div>
+                <div class="photos__content-galary">
+                    <span  v-for="(pic, key) in sightPics" :key="key" class="photos__content-sight-pic">
+                        <SightPhoto :sightPic="pic"/>
+                    </span>
+                </div>
             </div>
-            <div class="photos__content-galary">
-                <span  v-for="(pic, key) in sightPics" :key="key">
-                    <SightPhoto :sightPic="pic"/>
-                </span>
-            </div>
-        </div>
-        <div class="photos__video">
-            <div class="photos__video-caption">
-                <div class="photos__caption-header " > все еще сомневаетесь?</div>
-                <div class="photos__caption-paragraph"> смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз! </div>
-            </div>
-            <div class="photos__video-content">
-                <VideoPresent/>
+            <div class="photos__video">
+                <div class="photos__video-caption">
+                    <div class="photos__caption-header " > все еще сомневаетесь?</div>
+                    <div class="photos__caption-paragraph"> смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз! </div>
+                </div>
+                <div class="photos__video-content">
+                    <VideoPresent/>
+                </div>
             </div>
         </div>
     </div>
@@ -103,7 +105,7 @@ export default class SedonaPhotos extends Vue {
 }
 
 .photos__content-caption {
-    width: 440px;
+    max-width: 440px;
     margin: 0 auto;
     text-align: center;
 }
@@ -114,9 +116,9 @@ export default class SedonaPhotos extends Vue {
     flex-wrap: wrap;
 }
 
+
 .photos__video {
     margin: 100px auto 0 auto;
-    width: 780px;
 }
 
 .photos__video-caption {
@@ -128,6 +130,29 @@ export default class SedonaPhotos extends Vue {
 .photos__video-content {
     margin-top: 60px;
     margin-bottom: 100px; 
+}
+
+.photos__content-sight-pic {
+    display: flex;
+}
+
+@media (max-device-width:480px){
+    
+    .photos__content{
+        padding: 0 25px;
+    }
+
+    .photos__content-sight-pic {
+        display: flex;
+        padding: 0 25px;
+        min-height: 300px;
+    }
+}
+
+@media (min-width: 481px) and (max-width:768px){
+    .photos-main {
+        padding: 0 25px ;
+    }
 }
 
 </style>
