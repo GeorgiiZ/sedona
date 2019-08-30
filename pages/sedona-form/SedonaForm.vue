@@ -40,8 +40,8 @@
                 </div>
             </div>
             <DividerHeader headerText="контактная информация:"/>
-            <div class="form__row">
-                <div class="form__textbox" style="width: 50%;">
+            <div class="form__contacts">
+                <div class="form__textbox" >
                     <label class="form__caption_light">телефон*:</label>
                     <div class="form__textbox-input-custom
                                 form__textbox-input-phone">
@@ -49,7 +49,7 @@
                         <span class="form__textbox-phone"></span>
                     </div>
                 </div>
-                <div class="form__textbox" style="width: 50%;">
+                <div class="form__textbox">
                     <label class="form__caption_light">электронная почта*:</label>
                     <div class="form__textbox-input-custom">
                         <input type="email" class="form__txt-input form__textbox-input" v-model="personData.email" autocomplete="off" required/>
@@ -187,7 +187,7 @@ export default class SedonaForm extends Vue {
     line-height: 180%;
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     font-size: var(--font-size__middle);
@@ -202,6 +202,13 @@ export default class SedonaForm extends Vue {
 
 .form__header_centered{
     text-align: center;
+}
+
+.form__contacts {
+    display: flex;
+    align-items: center;
+    margin-top: 50px; 
+    width: 100%;
 }
 
 .form__row{
@@ -377,6 +384,15 @@ export default class SedonaForm extends Vue {
     font-size: var(--font-size__middle);
 }
 
+@media (min-width: 481px) and (max-width:768px){
+    
+    .form {
+        padding: 0 50px;
+    }
 
+    .form__contacts {
+        flex-direction: column; 
+    }
+}
 
 </style>

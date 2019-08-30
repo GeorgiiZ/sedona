@@ -9,8 +9,8 @@
                     <li class="nav-list__item" >
                         <router-link :to="{ name: 'SedonaPhoto'}"> фото и видео </router-link>
                     </li>
-                    <li  class="nav-list__item">
-                         <router-link class="nav-list__item-logo"  :to="{ name: 'Home'}">
+                    <li class="nav-list__item-logo">
+                         <router-link class="nav-list__item-logo-svg"  :to="{ name: 'Home'}">
                          </router-link>
                     </li>
                     <li class="nav-list__item" >
@@ -36,6 +36,9 @@
                     <span class="footer-list__item-twitter" />
                     <span class="footer-list__item-facebook" />
                     <span class="footer-list__item-video" />
+                    <!-- <svg class="footer-list__item-video-1">
+                        <use xlink:href="../assets/sprite/sprite.svg#video-footer" class="footer-list__item-video-2"></use>
+                    </svg> -->
                 </li>
                 <li class="footer-list__item
                            footer-list__item_last">
@@ -79,35 +82,17 @@ export default class Layout extends Vue {
     box-shadow: 0px 4px 15px 1px #888;
 }
 
+
 .nav-list {
     position: relative;
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-content: center;
     margin: 0;
     padding: 0;
     width: 100%;
-}
-
-@media (max-device-width:480px){
-    .nav-list {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .nav-list__item {
-        display: flex;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: var(--font-size__lower);
-        cursor: pointer;
-        z-index: 1;
-        background-color: #2277AA;
-        margin: 0;
-        padding: 0;
-    }
-}
-    
+} 
 
 .nav-list__item {
     display: flex;
@@ -115,10 +100,9 @@ export default class Layout extends Vue {
     text-transform: uppercase;
     font-weight: bold;
     font-size: var(--font-size__lower);
-    margin: 20px 0px;
+    padding: 20px 0;
     width: 20%;
     cursor: pointer;
-    z-index: 1;
 }
 
 .nav-list__item:hover {
@@ -132,6 +116,14 @@ export default class Layout extends Vue {
 }
 
 .nav-list__item-logo {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 20%;
+    cursor: pointer;
+}
+
+.nav-list__item-logo-svg {
     z-index: 1;
     position: absolute;
     top: 0;
@@ -139,6 +131,7 @@ export default class Layout extends Vue {
     height: 200px;
     background: url(../assets/sprite/sprite.svg#logotype-desktop) no-repeat;
 }
+
 
 a {
   text-decoration: none;
@@ -155,8 +148,7 @@ footer {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
-    padding: 0 150px;
+    padding: 0 100px;
 }
 
 .footer-list__item {
@@ -225,6 +217,62 @@ footer {
     margin-left: 15px;
 }
 
+/* .footer-list__item-video-1 {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-list__item-video-2{
+    fill: white;
+} */
+
+@media (max-device-width:480px){
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-list__item {
+        color: white;
+        background-color: #95c8d8;
+        width: 100%;
+        order: 1;
+    }
+
+    .nav-list__item-logo {
+        width: 100%;
+        min-height: 60px;
+        background-color: white;
+        order: 2;
+        background: url(../assets/sprite/sprite.svg#icon-menu) no-repeat; 
+        background-position: right;
+        background-size: 8%;
+    }
+
+    .nav-list__item-logo-svg {
+        width: 200px;
+        height: 100px;
+        background: url(../assets/sprite/sprite.svg#logotype-mobile) no-repeat;
+    }
+
+    .footer-list {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .footer-list__item {
+        margin: 20px 0;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width:768px){
+    .nav-list__item-logo-svg {
+        width: 200px;
+        height: 100px;
+        background: url(../assets/sprite/sprite.svg#logotype-mobile) no-repeat;
+    }
+}
 
 
 </style>

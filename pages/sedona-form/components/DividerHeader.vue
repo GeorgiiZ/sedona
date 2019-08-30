@@ -36,7 +36,7 @@ export default class DividerHeader extends Vue{
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 33%; 
+    width: 30%; 
     display: flex;
 }
 
@@ -49,6 +49,7 @@ export default class DividerHeader extends Vue{
 .form__divider-header{
     text-transform: uppercase;
     font-weight: bold;
+    width: 40%;
 }
 
 </style>

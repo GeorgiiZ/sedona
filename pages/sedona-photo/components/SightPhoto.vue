@@ -41,6 +41,7 @@ export default class SightPhoto extends Vue{
     width: 100%;
     height: 100%;
     object-fit: cover;  
+    object-position: 30% 100%; 
 }
 
 .sight-photo__info {
