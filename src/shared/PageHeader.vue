@@ -2,8 +2,7 @@
     <div class="header">
         <img class="header__img-back" src="../assets/backdesktopjpg.png"/>
         <!-- <span class="header__img-triangle"/> -->
-        <div class="header__img-triangle">
-        </div>
+        <div class="header__img-triangle"></div>
     </div>
 </template>
 
@@ -56,7 +55,7 @@ export default class PageHeader extends Vue {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: 60% 100%; 
+    object-position: 50% 100%; 
 }
 
 </style>
