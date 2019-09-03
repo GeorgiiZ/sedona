@@ -171,7 +171,7 @@ export default class SedonaForm extends Vue {
 
 .form-page__caption{
     margin: 100px auto 0 auto;
-    width: 500px;
+    max-width: 500px;
     text-align: center;
 }
 
