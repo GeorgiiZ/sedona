@@ -152,7 +152,7 @@ footer {
 }
 
 .footer-list__item {
-    margin: 30px 0;
+    padding: 30px 0;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -218,13 +218,26 @@ footer {
 }
 
 /* .footer-list__item-video-1 {
-    width: 20px;
-    height: 20px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #95c8d8;
+    margin-left: 15px;
 }
 
 .footer-list__item-video-2{
     fill: white;
+    background-color: aquamarine;
+}
+
+svg {
+  width: 70px;
+  height: 70px;
+}
+svg:hover {
+  fill: red;
 } */
+
 
 @media (max-device-width:480px){
     .nav-list {

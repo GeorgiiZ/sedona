@@ -40,8 +40,6 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 import Header from "../../shared/PageHeader.vue";
 import { SedonaAdvantage } from '@/service/models/SedonaAdvantage';
 
-const images = require.context("../assets/", true, /\.png$/)
-
 @Component({
     components: { Header }
 })
@@ -51,7 +49,7 @@ export default class Home extends Vue {
         { 
             name: 'жилье',
             desc: 'рекомендуем пожить в настоящем мотеле, все как в кино!',
-            img: images('/icon-house.png')
+            img: '../../icon-house.png'
         },
         {
             name: 'еда',
