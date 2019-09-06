@@ -4,7 +4,7 @@
             <Header class="photos__header-comp"/>
             <span class="photos__header-caption">{{ headerCaption }}</span>
         </div>
-        <div class="photos-main">
+        <!-- <div class="photos-main"> -->
             <div class="photos__content">
                 <div class="photos__content-caption"> 
                     <div class="photos__caption-header" > фото и видео </div>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="photos__content-galary">
                     <span  v-for="(pic, key) in sightPics" :key="key" class="photos__content-sight-pic">
-                        <SightPhoto :sightPic="pic"/>
+                        <SightPhoto :sightPic="pic" />
                     </span>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     <VideoPresent/>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
 </template>
 
@@ -101,35 +101,35 @@ export default class SedonaPhotos extends Vue {
 }
 
 .photos__content {
-    margin-top: 100px;
 }
 
 .photos__content-caption {
     max-width: 440px;
+    padding: 80px;
     margin: 0 auto;
     text-align: center;
 }
 
 .photos__content-galary {
-    margin-top:  60px;
     display: flex;
+    /* justify-content: center; */
+    margin: 0 auto;
     flex-wrap: wrap;
+    /* max-width: 800px; */
 }
 
 
 .photos__video {
-    margin: 100px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
 .photos__video-caption {
     width: 440px;
     margin: 0 auto;
     text-align: center;
-}
-
-.photos__video-content {
-    margin-top: 60px;
-    margin-bottom: 100px; 
+    padding: 80px;
 }
 
 .photos__content-sight-pic {
@@ -137,7 +137,7 @@ export default class SedonaPhotos extends Vue {
 }
 
 @media (max-device-width:480px){
-    
+
     .photos__content{
         padding: 0 25px;
     }
@@ -147,12 +147,26 @@ export default class SedonaPhotos extends Vue {
         padding: 0 25px;
         min-height: 300px;
     }
+    
+    .footer-list__item {
+        padding: 20px;
+    }
+
+    .photos__content-galary {
+        max-width: 80%;
+    }
 }
 
 @media (min-width: 481px) and (max-width:768px){
     .photos-main {
+        display: flex;
         padding: 0 25px ;
     }
+
+    .photos__content-galary {
+        max-width: 100%;
+    }
+
 }
 
 </style>

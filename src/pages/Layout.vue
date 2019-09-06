@@ -4,20 +4,21 @@
             <nav>
                 <ul class="nav-list">
                     <li class="nav-list__item" >
-                        <router-link :to="{ name: 'Home'}"> главная </router-link>
+                        <router-link class="nav-list__link" :to="{ name: 'Home'}" v-show="isMenuVisual"> главная </router-link>
+                        <span class="nav-list__item-cross" @click="isMenuVisual=false" v-show="isMenuVisual"></span>
                     </li>
-                    <li class="nav-list__item" >
-                        <router-link :to="{ name: 'SedonaPhoto'}"> фото и видео </router-link>
+                    <li class="nav-list__item" v-show="isMenuVisual">
+                        <router-link class="nav-list__link" :to="{ name: 'SedonaPhoto'}"> фото и видео </router-link>
                     </li>
                     <li class="nav-list__item-logo">
-                         <router-link class="nav-list__item-logo-svg"  :to="{ name: 'Home'}">
-                         </router-link>
+                         <router-link class="nav-list__item-logo-svg"  :to="{ name: 'Home'}"></router-link>
+                         <span class="nav-list__item-menu" @click="isMenuVisual=true"></span>
                     </li>
-                    <li class="nav-list__item" >
-                        <router-link :to="{ name: 'SedonaForm'}"> форма отзыва </router-link>
+                    <li class="nav-list__item" v-show="isMenuVisual">
+                        <router-link class="nav-list__link" :to="{ name: 'SedonaForm'}"> форма отзыва </router-link>
                     </li>
-                    <li class="nav-list__item" >
-                        html academy
+                    <li class="nav-list__item" v-show="isMenuVisual">
+                        <a class="nav-list__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">html academy</a> 
                     </li>
                 </ul>
             </nav>
@@ -36,9 +37,6 @@
                     <span class="footer-list__item-twitter" />
                     <span class="footer-list__item-facebook" />
                     <span class="footer-list__item-video" />
-                    <!-- <svg class="footer-list__item-video-1">
-                        <use xlink:href="../assets/sprite/sprite.svg#video-footer" class="footer-list__item-video-2"></use>
-                    </svg> -->
                 </li>
                 <li class="footer-list__item
                            footer-list__item_last">
@@ -55,7 +53,7 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 
 @Component
 export default class Layout extends Vue {
- 
+    isMenuVisual: boolean = true;
 }
 
 </script>
@@ -96,13 +94,10 @@ export default class Layout extends Vue {
 
 .nav-list__item {
     display: flex;
-    justify-content: center;
     text-transform: uppercase;
     font-weight: bold;
     font-size: var(--font-size__lower);
-    padding: 20px 0;
     width: 20%;
-    cursor: pointer;
 }
 
 .nav-list__item:hover {
@@ -115,10 +110,19 @@ export default class Layout extends Vue {
     color: gray;
 }
 
+.nav-list__link{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    flex: 1;
+    cursor: pointer;
+}
+
 .nav-list__item-logo {
     display: flex;
     position: relative;
     justify-content: center;
+    align-items: center;
     width: 20%;
     cursor: pointer;
 }
@@ -148,11 +152,11 @@ footer {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0 100px;
+    padding: 30px 100px;
 }
 
 .footer-list__item {
-    padding: 30px 0;
+    /* padding: 30px 0; */
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -217,27 +221,13 @@ footer {
     margin-left: 15px;
 }
 
-/* .footer-list__item-video-1 {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    background-color: #95c8d8;
-    margin-left: 15px;
+.nav-list__item-cross {
+    display: none;
 }
 
-.footer-list__item-video-2{
-    fill: white;
-    background-color: aquamarine;
+.nav-list__item-menu {
+    display: none;
 }
-
-svg {
-  width: 70px;
-  height: 70px;
-}
-svg:hover {
-  fill: red;
-} */
-
 
 @media (max-device-width:480px){
     .nav-list {
@@ -249,6 +239,8 @@ svg:hover {
         background-color: #95c8d8;
         width: 100%;
         order: 1;
+        display: flex;
+        align-items: center;
     }
 
     .nav-list__item-logo {
@@ -256,9 +248,9 @@ svg:hover {
         min-height: 60px;
         background-color: white;
         order: 2;
-        background: url(../assets/sprite/sprite.svg#icon-menu) no-repeat; 
+        /* background: url(../assets/sprite/sprite.svg#icon-menu) no-repeat; 
         background-position: right;
-        background-size: 8%;
+        background-size: 8%; */
     }
 
     .nav-list__item-logo-svg {
@@ -273,9 +265,32 @@ svg:hover {
     }
 
     .footer-list__item {
-        margin: 20px 0;
         justify-content: center;
         width: 100%;
+    }
+    
+    .nav-list__item-cross {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        background: url(../assets/sprite/sprite.svg#icon-cross) no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .nav-list__item-menu {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        background: url(../assets/sprite/sprite.svg#icon-menu) no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
     }
 }
 

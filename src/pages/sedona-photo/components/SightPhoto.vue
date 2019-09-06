@@ -88,4 +88,12 @@ export default class SightPhoto extends Vue{
     opacity: 0.5;
 }
 
+@media (min-width: 481px) and (max-width:768px){
+    
+    .sight-photo__info {
+        background: #eeeeee; 
+        color: black;
+    }
+}
+
 </style>
