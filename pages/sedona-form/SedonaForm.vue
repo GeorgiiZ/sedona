@@ -41,7 +41,8 @@
             </div>
             <DividerHeader headerText="контактная информация:"/>
             <div class="form__contacts">
-                <div class="form__textbox" >
+                <div class="form__textbox
+                            form__textbox_tablet">
                     <label class="form__caption_light">телефон*:</label>
                     <div class="form__textbox-input-custom
                                 form__textbox-input-phone">
@@ -49,7 +50,8 @@
                         <span class="form__textbox-phone"></span>
                     </div>
                 </div>
-                <div class="form__textbox">
+                <div class="form__textbox
+                            form__textbox_tablet" style="margin-left: 10px;">
                     <label class="form__caption_light">электронная почта*:</label>
                     <div class="form__textbox-input-custom">
                         <input type="email" class="form__txt-input form__textbox-input" v-model="personData.email" autocomplete="off" required/>
@@ -76,7 +78,7 @@
             <div class="form__row
                         form__row_bottom">
                 <button  type="submit" 
-                         class="form__submit"  @click.prevent="sendForm()">отправить отзыв</button>
+                         class="form__submit" @click.prevent="sendForm()">отправить отзыв</button>
                 <span class="form__caption_light
                              form__caption_light-bottom">*-обязательные поля</span>
             </div>
@@ -123,8 +125,8 @@ export default class SedonaForm extends Vue {
 
     sendForm(): void {
         if(this.recall.validateData() && this.personData.validateData()){
-            document.forms[0].submit();
             this.modalAcceptVisiual = true;
+            document.forms[0].submit();
         }
         else {
             this.modalDeniedVisual = true; 
@@ -170,7 +172,8 @@ export default class SedonaForm extends Vue {
 }
 
 .form-page__caption{
-    margin: 100px auto 0 auto;
+    margin: 0 auto;
+    padding: 50px;
     max-width: 500px;
     text-align: center;
 }
@@ -206,7 +209,7 @@ export default class SedonaForm extends Vue {
 
 .form__contacts {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     margin-top: 50px; 
     width: 100%;
 }
@@ -308,11 +311,12 @@ export default class SedonaForm extends Vue {
 .form__textbox-input-custom{ 
     display: flex;
     align-items: center;
+    width: 100%;
     background-color: #eee;
 }
 
 .form__textbox-input-phone{
-    margin-right: 75px;
+    /* margin-right: 75px; */
 } 
 
 .form__textbox-phone{
@@ -333,6 +337,10 @@ export default class SedonaForm extends Vue {
     height: 50px;
 }
 
+.form__sights{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .form__sights input[type="checkbox"]{
     position: absolute;
@@ -344,6 +352,7 @@ export default class SedonaForm extends Vue {
     display: flex;
     align-items: center;
     flex: 1;
+    padding: 10px;
 }
 
 .form__checkbox-custom {
@@ -374,9 +383,9 @@ export default class SedonaForm extends Vue {
 }
 
 .form__submit{
-    width: 50%;
     height: 50px;
     border: none;
+    width: 50%;
     background-color: #95c8d8;
     text-transform: uppercase;
     font-weight: bold;
@@ -392,6 +401,32 @@ export default class SedonaForm extends Vue {
 
     .form__contacts {
         flex-direction: column; 
+    }
+
+    .form__textbox{
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    .form__sights{
+        padding: 25px 0;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .form__textbox_tablet{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form__txt-input {
+        width: 100%;
+    }
+
+    .form__textbox-input-custom{
+        margin-top: 10px;
     }
 }
 
