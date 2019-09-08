@@ -8,10 +8,6 @@
                 <span class="subtitles"/>
                 <span class="fullscreen"/>
             </div>
-            <!-- <img class="video__control-elem" src="@/assets/replaysvg.png"/>
-            <input class="video__control-range" type="range" min=0 max="100" />
-            <img class="video__control-elem" src="@/assets/subtitlessvg.png"/>
-            <div class="baker"></div> -->
         </div>
     </div>
 </template>
@@ -92,33 +88,5 @@ export default class VideoPresent extends Vue {
     margin-left: 25px; 
 }
 
-.video__control-elem {
-    margin-left: 30px; 
-    cursor: pointer;
-}
-
-.video__control-elem:hover {
-    opacity: 0.7;
-}
-
-.video__control-elem:active {
-    opacity: 0.4;
-}
-
-.video__control-range {
- -webkit-appearance: none;
-  width: 70%;
-  border-radius: 5px;
-  background: black;
-  outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.baker {
-    /* background: url(C:/Users/GZennurov/Documents/vue-dev-projects/sedona/sedona/src/assets/sprite/sprite.svg#baker) no-repeat;  */
-    width: 1000px;
-    height: 1000px;
-}
 
 </style>

@@ -4,7 +4,7 @@ import Router, { RouteConfig } from 'vue-router';
 import Layout from '../pages/Layout.vue';
 import Home from '../pages/home/Home.vue';
 import SedonaPhoto from '../pages/sedona-photo/SedonaPhoto.vue';
-import SedonaForm from '../pages/sedona-form/SedonaForm';
+import SedonaForm from '../pages/sedona-form/SedonaForm.vue';
 
 Vue.use(Router);
 
