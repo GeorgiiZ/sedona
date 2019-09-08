@@ -177,13 +177,13 @@ export default class SedonaForm extends Vue {
     text-align: center;
 }
 
-.form-page__caption-header{
+.form-page__caption-header {
     text-transform: uppercase;
     font-weight: bold;
     font-size: var(--font-size__large);
 }
 
-.form-page__caption-paragraph{
+.form-page__caption-paragraph {
     text-transform: uppercase;
     margin-top: 25px; 
     line-height: 180%;
@@ -213,7 +213,6 @@ export default class SedonaForm extends Vue {
 
 .form__contacts {
     display: flex;
-    /* align-items: center; */
     margin-top: 50px; 
     width: 100%;
 }
@@ -229,7 +228,7 @@ export default class SedonaForm extends Vue {
     display: flex;
 }
 
-.form__row_bottom{
+.form__row_bottom {
     margin-bottom: 50px;
 }
 

@@ -96,9 +96,6 @@ export default class SedonaPhotos extends Vue {
     line-height: 180%;
 }
 
-.photos__content {
-}
-
 .photos__content-caption {
     max-width: 440px;
     padding: 80px;
