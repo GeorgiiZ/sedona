@@ -252,7 +252,6 @@ footer {
         display: flex;
         align-items: center;
         outline: inherit;
-        border-bottom: 1px solid white;
     }
 
     .nav-list__item:hover {
