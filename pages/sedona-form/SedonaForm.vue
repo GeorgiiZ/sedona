@@ -9,7 +9,7 @@
             <div class="form-page__caption-paragraph">помогите нашим отелям стать лучше! оставьте отзыв о них а также о посещенных ввами достопримечательностях</div>
         </div>
         <form class="form" method="GET" action="#">
-            <div class="form__row">
+            <div class="form__row-first">
                 <div class="form__impression">
                     <div class="form__header
                                 form__header_centered">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="form__textbox">
                         <label class="form__caption_light">имя*:</label>
-                        <input type="text" class="form__txt-input form__textbox-input"  v-model="personData.name" autocomplete="off" required/>
+                        <input type="text" class="form__txt-input form__textbox-input" v-model="personData.name" autocomplete="off" required/>
                     </div>
                     <div class="form__textbox">
                         <label class="form__caption_light">фамилия*:</label>
@@ -39,19 +39,18 @@
                     </div>
                 </div>
             </div>
-            <DividerHeader headerText="контактная информация:"/>
+            <DividerHeader class="form__divider" headerText="контактная информация:"/>
             <div class="form__contacts">
                 <div class="form__textbox
-                            form__textbox_tablet">
+                            form__textbox_contacts">
                     <label class="form__caption_light">телефон*:</label>
-                    <div class="form__textbox-input-custom
-                                form__textbox-input-phone">
+                    <div class="form__textbox-input-custom">
                         <input type="phone" class="form__txt-input form__textbox-input" v-model="personData.phoneNumber" autocomplete="off" required/>
                         <span class="form__textbox-phone"></span>
                     </div>
                 </div>
                 <div class="form__textbox
-                            form__textbox_tablet" style="margin-left: 10px;">
+                            form__textbox_contacts">
                     <label class="form__caption_light">электронная почта*:</label>
                     <div class="form__textbox-input-custom">
                         <input type="email" class="form__txt-input form__textbox-input" v-model="personData.email" autocomplete="off" required/>
@@ -59,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <DividerHeader headerText="посещенные достопримечательности"/>
+            <DividerHeader class="form__divider" headerText="посещенные достопримечательности"/>
             <div class="form__row
                         form__sights">
                 <label class="form__checkbox" v-for="(sight, key) in sightList" :key="key" >
@@ -68,7 +67,7 @@
                     <span class="form__caption">{{ sight[1] }}</span>
                 </label>
             </div>
-            <DividerHeader headerText="опишите свои эмоции"/>
+            <DividerHeader class="form__divider" headerText="опишите свои эмоции"/>
             <div class="form__row">
                 <textarea name=""
                         class="form__txt-input
@@ -173,7 +172,7 @@ export default class SedonaForm extends Vue {
 
 .form-page__caption{
     margin: 0 auto;
-    padding: 50px;
+    padding: 70px;
     max-width: 500px;
     text-align: center;
 }
@@ -197,10 +196,15 @@ export default class SedonaForm extends Vue {
     padding: 0 150px;
 }
 
+.form__divider{
+    margin-top: 50px; 
+}
+
 .form__header{
     text-transform: uppercase;
     font-weight: bold;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .form__header_centered{
@@ -221,6 +225,10 @@ export default class SedonaForm extends Vue {
     align-items: center;
 }
 
+.form__row-first{
+    display: flex;
+}
+
 .form__row_bottom{
     margin-bottom: 50px;
 }
@@ -229,7 +237,8 @@ export default class SedonaForm extends Vue {
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 25px;
+    padding: 15px 0;
+    width: 100%;
 }
 
 .form__radio input[type = "radio"]{
@@ -274,13 +283,17 @@ export default class SedonaForm extends Vue {
 }
 
 .form__impression{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-right: 2px solid #eee;
     width: 50%;
-    border-right: 1px solid #eee;
 }
 
 .form__introduce{
-    padding-left: 75px; 
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px; 
 }
 
 .form__txt-input{
@@ -298,7 +311,7 @@ export default class SedonaForm extends Vue {
 .form__textbox{
     display: flex;
     align-items: center;
-    margin-top: 25px;
+    padding: 15px 0;
 }
 
 
@@ -315,11 +328,7 @@ export default class SedonaForm extends Vue {
     background-color: #eee;
 }
 
-.form__textbox-input-phone{
-    /* margin-right: 75px; */
-} 
-
-.form__textbox-phone{
+.form__textbox-phone {
     background: url("../../assets/sprite/sprite.svg#phone") no-repeat;
     background-position: center;
     background-size: 80%; 
@@ -328,7 +337,7 @@ export default class SedonaForm extends Vue {
     height: 50px;
 }
 
-.form__textbox-mail{
+.form__textbox-mail {
     background: url("../../assets/sprite/sprite.svg#mail") no-repeat;
     background-position: center;
     background-size: 80%; 
@@ -337,12 +346,16 @@ export default class SedonaForm extends Vue {
     height: 50px;
 }
 
-.form__sights{
+.form__textbox_contacts {
+    padding: 25px; 
+}
+
+.form__sights {
     display: flex;
     flex-wrap: wrap;
 }
 
-.form__sights input[type="checkbox"]{
+.form__sights input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -375,14 +388,14 @@ export default class SedonaForm extends Vue {
     background-color: #eee;
 }
 
-.form__textarea{
+.form__textarea {
     width: 100%;
-    height : 200px;
+    height : 120px;
     padding: 15px;
     resize: none;
 }
 
-.form__submit{
+.form__submit {
     height: 50px;
     border: none;
     width: 50%;
@@ -391,22 +404,22 @@ export default class SedonaForm extends Vue {
     font-weight: bold;
     color: white;
     font-size: var(--font-size__middle);
+    outline: inherit;
 }
 
-@media (min-width: 481px) and (max-width:768px){
+.form__submit:hover {
+    background-color:#57A0D3;
+}
+
+.form__submit:active {
+    color: rgba(255,255,255, 0.5);
+}
+
+
+@media (min-device-width: 481px) and (max-device-width:768px){
     
     .form {
         padding: 0 50px;
-    }
-
-    .form__contacts {
-        flex-direction: column; 
-    }
-
-    .form__textbox{
-        display: flex;
-        align-items: center;
-        margin-top: 25px;
     }
 
     .form__sights{
@@ -415,19 +428,110 @@ export default class SedonaForm extends Vue {
         margin: 0 auto;
     }
 
-    .form__textbox_tablet{
+    .form__contacts {
+        flex-direction: column; 
+        justify-content: flex-start;
+    }
+
+    .form__textbox_contacts{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .form__txt-input {
+    .form__textbox-input-custom {
+        margin-top: 10px;
+    }
+
+    .form__header_centered {
+        text-align:inherit;
+    }
+
+    .form__impression{
+        padding-right: 0;
+    }
+
+    .form__introduce{
+        padding-left: 25px;
+        width: 48%;
+    }
+}
+
+@media (max-device-width: 481px){
+
+    .form {
+        padding: 0;
+    }
+
+    .form__divider {
+        margin: 0;
+    }
+
+    .form__row{
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        width: 85%;
+        padding: 25px;
+    }
+
+    .form__row-first {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        width: 85%;
+    }
+
+    .form__header{
+        margin: 0;
+        text-align: center;
+        padding-bottom: 15px; 
+    }
+
+    .form__impression {
+        border-top: 2px solid #eee; 
+        border-right: none; 
+        padding: 20px 25px;
+        width: 100%;
+        flex: 1;
+        order: 2;
+    }
+
+    .form__introduce {
+        border-top: 2px solid #eee; 
+        padding: 20px 25px; 
+        width: 100%;
+        order: 1;
+    }
+
+    .form__contacts {
+        margin: 0;
+        flex-direction: column; 
+        justify-content: flex-start;
+    }
+
+     .form__textbox_contacts{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form__textbox-input-custom {
+        margin-top: 10px;
+    }
+
+    .form__caption_light-bottom{
+        display: none;
+    }
+
+    .form__submit {
         width: 100%;
     }
 
-    .form__textbox-input-custom{
-        margin-top: 10px;
+    .form__textarea {
+        width: 90%;
     }
+
 }
 
 </style>

@@ -27,6 +27,7 @@ export default class PageHeader extends Vue {
     flex-direction: column;
     position: relative;
     align-items: center;
+    height: 100%;
 }
 
 .header__img-triangle {
@@ -56,6 +57,7 @@ export default class PageHeader extends Vue {
     width: 100%;
     object-fit: cover;
     object-position: 50% 100%; 
+    flex: 1;
 }
 
 </style>

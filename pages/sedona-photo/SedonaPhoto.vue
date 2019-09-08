@@ -4,7 +4,6 @@
             <Header class="photos__header-comp"/>
             <span class="photos__header-caption">{{ headerCaption }}</span>
         </div>
-        <!-- <div class="photos-main"> -->
             <div class="photos__content">
                 <div class="photos__content-caption"> 
                     <div class="photos__caption-header" > фото и видео </div>
@@ -21,11 +20,8 @@
                     <div class="photos__caption-header " > все еще сомневаетесь?</div>
                     <div class="photos__caption-paragraph"> смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз! </div>
                 </div>
-                <div class="photos__video-content">
-                    <VideoPresent/>
-                </div>
+                <VideoPresent class="photos__video-content"/>
             </div>
-        <!-- </div> -->
     </div>
 </template>
 
@@ -112,10 +108,9 @@ export default class SedonaPhotos extends Vue {
 
 .photos__content-galary {
     display: flex;
-    /* justify-content: center; */
     margin: 0 auto;
     flex-wrap: wrap;
-    /* max-width: 800px; */
+    /* align-content: flex-start; */
 }
 
 
@@ -126,7 +121,7 @@ export default class SedonaPhotos extends Vue {
 }
 
 .photos__video-caption {
-    width: 440px;
+    max-width: 440px;
     margin: 0 auto;
     text-align: center;
     padding: 80px;
@@ -134,17 +129,25 @@ export default class SedonaPhotos extends Vue {
 
 .photos__content-sight-pic {
     display: flex;
+    min-height: 300px;
+
 }
 
 @media (max-device-width:480px){
 
-    .photos__content{
-        padding: 0 25px;
+    .photos__content-galary {
+        justify-content: center;
     }
 
     .photos__content-sight-pic {
         display: flex;
-        padding: 0 25px;
+        width: 100%;
+        padding: 30px;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    .photos__video-content{
         min-height: 300px;
     }
     
@@ -152,12 +155,17 @@ export default class SedonaPhotos extends Vue {
         padding: 20px;
     }
 
-    .photos__content-galary {
-        max-width: 80%;
+    .photos__content-caption{
+        padding: 50px;
     }
+
+    .photos__video-caption{
+        padding: 50px;
+    }
+
 }
 
-@media (min-width: 481px) and (max-width:768px){
+@media (min-device-width: 481px) and (max-device-width:768px){
     .photos-main {
         display: flex;
         padding: 0 25px ;

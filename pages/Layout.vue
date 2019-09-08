@@ -40,8 +40,10 @@
                 </li>
                 <li class="footer-list__item
                            footer-list__item_last">
-                    РАЗРАБОТАНО
-                    <span class="footer-list__item-academy"/>
+                    <a class="footer-list__item-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+                        РАЗРАБОТАНО
+                        <span class="footer-list__item-academy"/>
+                    </a>
                 </li>
             </ul>
         </footer>
@@ -156,12 +158,12 @@ footer {
 }
 
 .footer-list__item {
-    /* padding: 30px 0; */
     display: flex;
     align-items: center;
     cursor: pointer;
     width: 33%;
 }
+
 
 .footer-list__item:active {
     opacity: 0.5;
@@ -178,6 +180,11 @@ footer {
 
 .footer-list__item_last {
     justify-content: flex-end;
+}
+
+.footer-list__item-link {
+    display: flex;
+    align-items: center;
 }
 
 .footer-list__item-academy {
@@ -203,6 +210,7 @@ footer {
     background-color: #95c8d8;
 }
 
+
 .footer-list__item-facebook {
     background: url("../assets/sprite/sprite.svg#facebook") no-repeat;
     width: 50px;
@@ -212,6 +220,7 @@ footer {
     margin-left: 15px;
 }
 
+
 .footer-list__item-video {
     background: url("../assets/sprite/sprite.svg#video-footer") no-repeat;
     width: 50px;
@@ -220,6 +229,7 @@ footer {
     background-color: #95c8d8;
     margin-left: 15px;
 }
+
 
 .nav-list__item-cross {
     display: none;
@@ -241,16 +251,23 @@ footer {
         order: 1;
         display: flex;
         align-items: center;
+        outline: inherit;
     }
+
+    .nav-list__item:hover {
+        background-color:#57A0D3;
+    }
+
+    .nav-list__item:active {
+        color: rgba(255,255,255, 0.5);
+    }
+
 
     .nav-list__item-logo {
         width: 100%;
         min-height: 60px;
         background-color: white;
         order: 2;
-        /* background: url(../assets/sprite/sprite.svg#icon-menu) no-repeat; 
-        background-position: right;
-        background-size: 8%; */
     }
 
     .nav-list__item-logo-svg {
@@ -261,7 +278,9 @@ footer {
 
     .footer-list {
         flex-direction: column;
+        margin-top: 25px;
         padding: 0;
+        width: 90%;
     }
 
     .footer-list__item {
@@ -291,6 +310,10 @@ footer {
         width: 25px;
         height: 25px;
         cursor: pointer;
+    }
+
+    .footer-list__item_first{
+        padding-top: 50px; 
     }
 }
 

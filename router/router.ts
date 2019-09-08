@@ -12,7 +12,7 @@ const home: RouteConfig = { path: 'home', name: 'Home', component: Home };
 const sedonaPhoto: RouteConfig = { path: 'sedona-photo', name: 'SedonaPhoto', component: SedonaPhoto };
 const sedonaForm: RouteConfig = { path: 'sedona-form', name: 'SedonaForm', component: SedonaForm };
 
-const layout: RouteConfig = {
+const layout: RouteConfig =   {
     path: '/',
     redirect: 'home',
     name: 'layout',
