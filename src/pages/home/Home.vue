@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="home-header">
-            <Header/>
+            <Header class="home-header__img"/>
             <div class="home-header__caption"></div>
         </div>
         <div class="home-content">
@@ -39,11 +39,11 @@
                 </div>
             </div>
             <div class="home-content__facts
-                        home-content__facts_grey">
-                <div class="home-content__fact" v-for="(fact, idx, key) in advantageList" :key="key">
+                        home-content__facts-gray">
+                <div class="home-content__fact-anvantage" v-for="(fact, idx, key) in advantageList" :key="key">
                     <div class="home-content__caption-header
                                 home-content__caption-header_narrow">{{ fact.name }}</div>
-                    <div class="home-content__fact-num">- №{{idx+3}} -</div>
+                    <div class="home-content__fact-num">- № {{ idx+3 }} -</div>
                     <div class="home-content__caption-paragraph">{{ fact.desc }}</div>
                 </div>
             </div>
@@ -52,9 +52,7 @@
                 <div class="home-content__caption-paragraph">укажите предполагаемые даты поезки и мыпокажем вам лучшие предложения гостиниц в седоне</div>
                 <button type="submit" class="home-content__motels-btn" @click.prevent="sendRequenst()">найти гостиницу</button>
             </div>
-            <div class="home-content__map">
-                <img src="@/assets/map-desktop.png"/>
-            </div>
+            <img src="@/assets/map-desktop.png" class="home-content__map"/>
         </div>
     </div>
 </template>
@@ -101,7 +99,7 @@ export default class Home extends Vue {
         },
         {
             name: 'мало туристов',
-            desc: 'большинство едет в гранд каньен и топится там',
+            desc: 'большинство едет в гранд каньен и толпится там',
         }
     ];
 }
@@ -150,6 +148,12 @@ svg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 500px;
+}
+
+.home-header__img{
+    /* min-height: 500px; */
+    flex: 1;
 }
 
 .home-header__caption {
@@ -192,7 +196,6 @@ svg {
     text-transform: uppercase;
     margin-top: 20px; 
     line-height: 180%;
-    text-align: center;
 }
 
 .home-content__caption-paragraph_white{
@@ -212,7 +215,7 @@ svg {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   width: 30%;
+   /* width: 30%; */
    text-align: center;
 }
 
@@ -220,22 +223,34 @@ svg {
     object-fit: cover;
 }
 
+
 .home-content__facts {
     display: flex;
     justify-content: space-between;
 }
 
+.home-content__facts-gray {
+    background-color: #eee;
+}
+
 .home-content__fact {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 50px;
 }
 
-.home-content__facts_grey {
-    background-color: #eee;
+.home-content__fact-anvantage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
 }
+
 
 .home-content__fact-img {
     margin-bottom: 20px; 
@@ -250,6 +265,7 @@ svg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 60px;
     margin: 0 auto;
     max-width: 400px;
@@ -273,10 +289,82 @@ svg {
     color: white;
     cursor: pointer;
     font-size: var(--font-size__middle);
+    outline: inherit;
+}
+
+.home-content__motels-btn:hover {
+    background-color:#57A0D3;
+}
+
+.home-content__motels-btn:active {
+    color: rgba(255,255,255, 0.5);
 }
 
 .home-content__map{
-    display: flex;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 100%;
+}
+
+@media(max-device-width: 480px){
+
+    .home-content__advantage{
+        flex-direction: column;
+        max-height: none;
+        /* max-width:  */
+    }
+
+    .home-content__advantage-info{
+        order: 1;
+    }
+
+    .home-content__advantage-img{
+        min-height: 400px;
+        max-width: 450px;
+        order: 2;
+    }
+
+    .home-content__map{
+        min-height: 500px;
+        max-width: 450px;
+    }
+
+    .home-content__facts{
+        flex-direction: column;
+        padding: 0 25px;
+    }
+
+    .home-content__fact{
+        align-items: flex-start;
+        padding-left: 85px; 
+        text-align: inherit;
+    }
+
+    .home-content__fact-anvantage{
+        border-bottom: 1px solid #bebebe; 
+    }
+
+    .home-content__caption-header_narrow{
+        max-width: none;
+    }
+
+    .icon-house {
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
+
+    .icon-burger {
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
+
+    .icon-gift {
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
 }
 
 </style>

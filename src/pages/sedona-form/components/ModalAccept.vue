@@ -82,7 +82,15 @@ export default class ModalAccept extends Vue{
     font-weight: bold;
     color: white;
     font-size: var(--font-size__middle);
+    outline: inherit;
 }
 
+.modal-accept__content-btn:hover {
+    background-color:#57A0D3;
+}
+
+.modal-accept__content-btn:active {
+    color: rgba(255,255,255, 0.5);
+}
 
 </style>
