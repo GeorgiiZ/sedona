@@ -63,9 +63,6 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 import Header from "../../shared/PageHeader.vue";
 import { SedonaAdvantage } from '@/service/models/SedonaAdvantage';
 
-const images = require.context("../../assets/", true, /\.png$/)
-
-
 @Component({
     components: { Header }
 })
