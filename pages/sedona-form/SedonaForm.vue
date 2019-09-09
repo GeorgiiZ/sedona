@@ -125,7 +125,6 @@ export default class SedonaForm extends Vue {
     sendForm(): void {
         if(this.recall.validateData() && this.personData.validateData()){
             this.modalAcceptVisiual = true;
-            document.forms[0].submit();
         }
         else {
             this.modalDeniedVisual = true; 
@@ -136,6 +135,7 @@ export default class SedonaForm extends Vue {
         this.modalAcceptVisiual = false;
         this.recall = new SedonaRecall();
         this.personData = new PersonalData();
+        document.forms[0].submit();
     }
 }
 
