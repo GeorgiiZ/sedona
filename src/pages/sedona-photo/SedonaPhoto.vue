@@ -67,7 +67,6 @@ export default class SedonaPhotos extends Vue {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .photos__header-comp {
@@ -79,9 +78,11 @@ export default class SedonaPhotos extends Vue {
     position: absolute;    
     font-size: var(--font-size__extra-large);
     color: white;
-    font-weight: 700;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 5px;
+    text-align: center;
+    width: 100%;
 }
 
 .photos__caption-header {
@@ -127,7 +128,6 @@ export default class SedonaPhotos extends Vue {
 .photos__content-sight-pic {
     display: flex;
     min-height: 300px;
-
 }
 
 @media (max-device-width:480px){
@@ -138,8 +138,10 @@ export default class SedonaPhotos extends Vue {
 
     .photos__content-sight-pic {
         display: flex;
+        flex-direction: column;
         width: 100%;
-        padding: 30px;
+        height: 100%;
+        padding: 20px;
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
     }
@@ -160,6 +162,9 @@ export default class SedonaPhotos extends Vue {
         padding: 50px;
     }
 
+    .photos__header-caption{
+        font-size: 80px;
+    }
 }
 
 @media (min-device-width: 481px) and (max-device-width:768px){
@@ -171,7 +176,6 @@ export default class SedonaPhotos extends Vue {
     .photos__content-galary {
         max-width: 100%;
     }
-
 }
 
 </style>

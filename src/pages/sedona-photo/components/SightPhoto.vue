@@ -34,6 +34,7 @@ export default class SightPhoto extends Vue{
 
 .sight-photo {
     display: flex;
+    flex-direction: column;
     position: relative;
 }
 
@@ -50,7 +51,6 @@ export default class SightPhoto extends Vue{
     position: absolute;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0);
     background: rgba(0, 0, 0, 0.3); 
     color: white;
     width: 100%;
@@ -88,11 +88,37 @@ export default class SightPhoto extends Vue{
     opacity: 0.5;
 }
 
-@media (min-width: 481px) and (max-width:768px){
+@media (min-device-width: 481px) and (max-device-width:768px){
     
     .sight-photo__info {
         background: #eeeeee; 
         color: black;
+    }
+}
+
+@media(max-device-width: 480px){
+
+
+    .sight-photo__info{
+        flex-direction: column;
+        position: relative;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: inherit;
+        color: black;
+        padding-top: 15px;
+    }
+
+    .sight-photo__info-data{
+        margin: 0;
+    }
+
+    .sight-photo__info-likes{
+        margin: 0;
+    }
+
+    .sight-photo__info{
+        flex: 1;
     }
 }
 
