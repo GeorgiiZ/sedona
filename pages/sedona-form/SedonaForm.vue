@@ -531,6 +531,10 @@ export default class SedonaForm extends Vue {
         width: 90%;
     }
 
+    .form-page__header-caption{
+        font-size: 80px;
+    }
+
 }
 
 </style>
