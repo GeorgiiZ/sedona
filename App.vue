@@ -17,6 +17,11 @@ export default class App extends Vue {}
 
 <style>
 
+html{
+  display: flex;
+  flex-direction: column;
+}
+
 @font-face {
   font-family: 'PT_Sans';
   src: url(fonts/PT_Sans/PTSans-Regular.ttf);
@@ -36,6 +41,7 @@ export default class App extends Vue {}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
+  flex: 1;
   color:black;
   background-color: gainsboro;
 }

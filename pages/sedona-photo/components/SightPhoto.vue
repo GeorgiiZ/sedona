@@ -7,7 +7,7 @@
                 Автор фото: {{ sightPic.author }}
             </div>
             <div class="sight-photo__info-likes">
-                <div class="sight-photo__info-likeImg" @click="incLikes()"></div>
+                <div class="sight-photo__info-like-img" @click="incLikes()"></div>
                 {{ sightPic.likesCount }}
             </div>
         </div>
@@ -36,6 +36,9 @@ export default class SightPhoto extends Vue{
     display: flex;
     flex-direction: column;
     position: relative;
+    height: 100%;
+    width: 100%;
+    flex: 1;
 }
 
 .sight-photo__img {
@@ -43,6 +46,7 @@ export default class SightPhoto extends Vue{
     height: 100%;
     object-fit: cover;  
     object-position: 30% 100%; 
+    flex: 1;
 }
 
 .sight-photo__info {
@@ -74,9 +78,8 @@ export default class SightPhoto extends Vue{
     margin-right: 25px;  
 }
 
-.sight-photo__info-likeImg {
+.sight-photo__info-like-img {
     margin-right: 10px;
-    cursor: pointer;
     height: 20px;
     width:  20px;
     background: url(../../../assets/sprite/sprite.svg#like-icon) no-repeat;
@@ -84,12 +87,11 @@ export default class SightPhoto extends Vue{
     background-size: cover;
 }
 
-.sight-photo__info-likeImg:active {
+.sight-photo__info-like-img:active {
     opacity: 0.5;
 }
 
 @media (min-device-width: 481px) and (max-device-width:768px){
-    
     .sight-photo__info {
         background: #eeeeee; 
         color: black;
@@ -97,12 +99,9 @@ export default class SightPhoto extends Vue{
 }
 
 @media(max-device-width: 480px){
-
-
     .sight-photo__info{
         flex-direction: column;
         position: relative;
-        justify-content: flex-start;
         align-items: flex-start;
         background: inherit;
         color: black;
@@ -114,11 +113,9 @@ export default class SightPhoto extends Vue{
     }
 
     .sight-photo__info-likes{
-        margin: 0;
-    }
-
-    .sight-photo__info{
-        flex: 1;
+        margin: 10px 0 0 0;
+        color: white;
+        background-color: #eee;
     }
 }
 
