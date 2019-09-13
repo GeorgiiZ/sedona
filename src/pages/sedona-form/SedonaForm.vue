@@ -1,9 +1,6 @@
 <template>
     <div class="form-page">
-        <div class="form-page__header">
-            <Header class="form-page__header-comp"/>
-            <span class="form-page__header-caption">{{ headerCaption }}</span>
-        </div>
+        <Header class="form-page__header"/>
          <div class="form-page__caption">
             <div class="form-page__caption-header">оставьте свой отзыв</div>
             <div class="form-page__caption-paragraph">помогите нашим отелям стать лучше! оставьте отзыв о них а также о посещенных ввами достопримечательностях</div>
@@ -148,26 +145,9 @@ export default class SedonaForm extends Vue {
     flex-direction: column;
 }
 
-.form-page__header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-page__header-comp{
+.form-page__header{
     width: 100%;
     height: 300px;
-}
-
-.form-page__header-caption{
-    position: absolute;    
-    font-size: var(--font-size__extra-large);
-    color: white;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 5px;
 }
 
 .form-page__caption{
@@ -530,11 +510,6 @@ export default class SedonaForm extends Vue {
     .form__textarea {
         width: 90%;
     }
-
-    .form-page__header-caption{
-        font-size: 80px;
-    }
-
 }
 
 </style>

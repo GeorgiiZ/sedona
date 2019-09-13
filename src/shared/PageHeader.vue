@@ -1,7 +1,10 @@
 <template>
     <div class="header">
-        <img class="header__img-back" src="../assets/backdesktopjpg.png"/>
-        <div class="header__img-triangle"></div>
+        <img class="header__back-img" src="../assets/backdesktopjpg.png"/>
+        <div class="header__triangle-img"></div>
+        <slot>
+            <span class="header__content-caption">sedona</span>
+        </slot>
     </div>
 </template>
 
@@ -26,10 +29,22 @@ export default class PageHeader extends Vue {
     flex-direction: column;
     position: relative;
     align-items: center;
+    justify-content: center;
     height: 100%;
 }
 
-.header__img-triangle {
+.header__content-caption {
+    position: absolute;    
+    font-size: var(--font-size__extra-large);
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.header__triangle-img {
     background: url("../assets/introtrianglesvg.png") no-repeat;
     background-size: cover; 
     background-position: center bottom; 
@@ -42,12 +57,18 @@ export default class PageHeader extends Vue {
 }
 
 
-.header__img-back {
+.header__back-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: 50% 100%; 
     flex: 1;
+}
+
+@media (max-device-width:480px){
+    .header__content-caption {
+        font-size: 80px;
+    }
 }
 
 </style>

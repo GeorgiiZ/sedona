@@ -71,7 +71,6 @@ export default class Layout extends Vue {
     background-color: white;
     max-width: 1200px;
     margin: 0 auto;
-    /* padding: 0 25px; */
     display: flex;
     flex-direction: column;
     --font-size__lower: 14px;
