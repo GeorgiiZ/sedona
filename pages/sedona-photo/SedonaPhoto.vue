@@ -1,9 +1,6 @@
 <template>
     <div class="photos">
-        <div class="photos__header">
-            <Header class="photos__header-comp"/>
-            <span class="photos__header-caption">{{ headerCaption }}</span>
-        </div>
+            <Header class="photos__header"/>
             <div class="photos__content">
                 <div class="photos__content-caption"> 
                     <div class="photos__caption-header" > фото и видео </div>
@@ -63,26 +60,8 @@ export default class SedonaPhotos extends Vue {
 }
 
 .photos__header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.photos__header-comp {
     width: 100%;
     height: 300px;
-}
-
-.photos__header-caption {
-    position: absolute;    
-    font-size: var(--font-size__extra-large);
-    color: white;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-align: center;
-    width: 100%;
 }
 
 .photos__caption-header {
@@ -162,9 +141,6 @@ export default class SedonaPhotos extends Vue {
         padding: 50px;
     }
 
-    .photos__header-caption{
-        font-size: 80px;
-    }
 }
 
 @media (min-device-width: 481px) and (max-device-width:768px){

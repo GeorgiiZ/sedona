@@ -1,46 +1,25 @@
 <template>
     <div class="home">
-        <div class="home-header">
-            <Header class="home-header__img"/>
-            <div class="home-header__caption"></div>
-        </div>
+        <Header class="home-header">
+           <div class="home-header__caption"></div>
+        </Header>
         <div class="home-content">
             <div class="home-content__caption">
                 <div class="home-content__caption-header">седона - небольшой городок в аризоне, заслуживающий большего!</div>
                 <div class="home-content__caption-paragraph">рассмотрим 5 причин, по которым седона круче, чем гранд каньон!</div>
             </div>
-            <div class="home-content__advantage">
-                <div class="home-content__advantage-info">
-                    <div class="home-content__caption-header
-                                home-content__caption-header_white">настоящий городок</div>
-                    <div class="home-content__caption-paragraph
-                                home-content__caption-paragraph_white">- № 1 -</div>
-                    <div class="home-content__caption-paragraph
-                                home-content__caption-paragraph_white">седона не аттракцион для туристов, там течет своя жизнь</div>
-                </div>
-                <img class="home-content__advantage-img" src="@/assets/photo-city.png"/>
-            </div>
+            <AdvantageMain :advantage = 'advantagesMain[0]' imgDisplay='img-first' number='1'/>
             <div class="home-content__facts">
-                <div class="home-content__fact" v-for="(fact, key) in factList" :key="key">
-                    <div :class="[ fact.img, {'home-content__fact-img': true} ]"/>
+                <div class="home-content__fact" v-for="(fact, key) in facts" :key="key">
+                    <div :class="[ fact.img, 'home-content__fact-img' ]"/>
                     <div class="home-content__caption-header">{{ fact.name }}</div>
                     <div class="home-content__caption-paragraph">{{ fact.desc }}</div>
                 </div>
             </div>
-            <div class="home-content__advantage">
-                <img class="home-content__advantage-img" src="@/assets/photo-bridge.png"/>
-                <div class="home-content__advantage-info">
-                    <div class="home-content__caption-header
-                                home-content__caption-header_white">там есть мост дьявола</div>
-                    <div class="home-content__caption-paragraph
-                                home-content__caption-paragraph_white">- № 2 -</div>
-                    <div class="home-content__caption-paragraph
-                                home-content__caption-paragraph_white">да, по нему можно пройти если вы осмелилитесь, конечно</div>
-                </div>
-            </div>
+            <AdvantageMain :advantage = 'advantagesMain[1]' imgDisplay='img-last' number='2'/>
             <div class="home-content__facts
                         home-content__facts-gray">
-                <div class="home-content__fact-anvantage" v-for="(fact, idx, key) in advantageList" :key="key">
+                <div class="home-content__fact-anvantage" v-for="(fact, idx, key) in advantages" :key="key">
                     <div class="home-content__caption-header
                                 home-content__caption-header_narrow">{{ fact.name }}</div>
                     <div class="home-content__fact-num">- № {{ idx+3 }} -</div>
@@ -62,13 +41,14 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 import Header from "../../shared/PageHeader.vue";
 import { SedonaAdvantage } from '@/service/models/SedonaAdvantage';
+import AdvantageMain from '@/pages/home/components/AdvantageMain.vue';
 
 @Component({
-    components: { Header }
+    components: { Header, AdvantageMain }
 })
 export default class Home extends Vue {
     headerCaption: string = "sedona";
-    factList: SedonaAdvantage []  = [ 
+    facts: SedonaAdvantage []  = [ 
         { 
             name: 'жилье',
             desc: 'рекомендуем пожить в настоящем мотеле, все как в кино!',
@@ -85,7 +65,7 @@ export default class Home extends Vue {
             img: 'icon-gift'
         }
     ];
-    advantageList: SedonaAdvantage [] = [
+    advantages: SedonaAdvantage [] = [
         { 
             name: 'небольшая площадь',
             desc: 'интересные места находятся очень близко',
@@ -99,6 +79,19 @@ export default class Home extends Vue {
             desc: 'большинство едет в гранд каньен и толпится там',
         }
     ];
+
+    advantagesMain: SedonaAdvantage [] = [
+        {
+            name: 'настоящий городок',
+            desc: 'седона не аттракцион для туристов, там течет своя жизнь',
+            img: 'photo-city'
+        },
+        {
+            name: 'там есть мост дьявола',
+            desc: 'да, по нему можно пройти если вы осмелилитесь, конечно',
+            img: 'photo-bridge'
+        }
+    ];
 }
 </script>
 
@@ -110,7 +103,7 @@ svg {
   fill: blue;
 }
 
-.icon-house{
+.icon-house {
     background: url("../../assets/sprite/sprite.svg#icon-house") no-repeat;
     background-position: center;
     background-size: cover; 
@@ -118,7 +111,7 @@ svg {
     height: 50px;
 }
 
-.icon-burger{
+.icon-burger {
     background: url("../../assets/sprite/sprite.svg#icon-burger") no-repeat;
     background-position: center;
     background-size: cover; 
@@ -126,7 +119,7 @@ svg {
     height: 50px;
 }
 
-.icon-gift{
+.icon-gift {
     background: url("../../assets/sprite/sprite.svg#icon-gift") no-repeat;
     background-position: center;
     background-size: cover; 
@@ -140,17 +133,8 @@ svg {
 }
 
 .home-header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px;
-}
-
-.home-header__img{
-    /* min-height: 500px; */
     flex: 1;
+    min-height: 500px;
 }
 
 .home-header__caption {
@@ -174,18 +158,14 @@ svg {
     text-align: center;
 }
 
-.home-content__caption-header{
+.home-content__caption-header {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
 }
 
-.home-content__caption-header_white{
-    color: white;
-}
-
-.home-content__caption-header_narrow{
+.home-content__caption-header_narrow {
     max-width: 150px;
 }
 
@@ -194,32 +174,6 @@ svg {
     margin-top: 20px; 
     line-height: 180%;
 }
-
-.home-content__caption-paragraph_white{
-    color: white;
-    margin-top: 15px; 
-}
-
-.home-content__advantage {
-    display: flex;
-    flex-direction: row;
-    max-height: 256px;
-}
-
-.home-content__advantage-info {
-   background-color: #95c8d8;
-   padding: 80px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   /* width: 30%; */
-   text-align: center;
-}
-
-.home-content__advantage-img {
-    object-fit: cover;
-}
-
 
 .home-content__facts {
     display: flex;
@@ -257,7 +211,7 @@ svg {
     margin-top: 20px;
 }
 
-.home-content__motels{
+.home-content__motels {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -304,23 +258,6 @@ svg {
 }
 
 @media(max-device-width: 480px){
-
-    .home-content__advantage{
-        flex-direction: column;
-        max-height: none;
-        /* max-width:  */
-    }
-
-    .home-content__advantage-info{
-        order: 1;
-    }
-
-    .home-content__advantage-img{
-        min-height: 400px;
-        max-width: 450px;
-        order: 2;
-    }
-
     .home-content__map{
         min-height: 500px;
         max-width: 450px;
