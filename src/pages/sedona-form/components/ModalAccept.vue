@@ -44,8 +44,8 @@ export default class ModalAccept extends Vue{
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 300px;
-    width: 550px;
+    min-height: 300px;
+    max-width: 550px;
     background-color: white;
     box-shadow: 2px 30px 10px 0px #888;
 }
@@ -91,6 +91,12 @@ export default class ModalAccept extends Vue{
 
 .modal-accept__content-btn:active {
     color: rgba(255,255,255, 0.5);
+}
+
+@media(max-device-width: 480px){
+    .modal-accept__content{
+            margin: 20px;
+    }
 }
 
 </style>

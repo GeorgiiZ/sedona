@@ -99,11 +99,12 @@ export default class AdvantageMain extends Vue {
 
     .advantage-info {
         order: 1;
+        padding: 50px;
     }
 
     .advantage-img {
-        min-height: 400px;
-        max-width: 450px;
+        min-height: 350px;
+        max-width: 100%;
         order: 2;
     }
 }

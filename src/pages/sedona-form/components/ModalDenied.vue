@@ -66,7 +66,7 @@ export default class ModalAccept extends Vue{
 .modal-denied__content-btn {
     width: 100%;
     height: 50px;
-    margin-top: 25px;
+    margin-top: auto;
     border: none;
     background-color: #95c8d8;
     text-transform: uppercase;
@@ -82,6 +82,13 @@ export default class ModalAccept extends Vue{
 
 .modal-denied__content-btn:active {
     color: rgba(255,255,255, 0.5);
+}
+
+@media(max-device-width: 480px){
+    .modal-denied__content{
+            margin: 20px;
+            padding: 30px;
+    }
 }
 
 
