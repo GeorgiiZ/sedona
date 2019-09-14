@@ -1,6 +1,6 @@
 <template>
     <div class="video">
-        <img class="video__img" src="@/assets/videodesktopjpg.png"/>
+        <img class="video__img" src="@/assets/videodesktopjpg.png" alt="sedona-video"/>
         <div class="video__control">
             <div class="video__control-content">
                 <span class="replay"/>

@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <img class="header__back-img" src="../assets/backdesktopjpg.png"/>
+        <img class="header__back-img" src="../assets/backdesktopjpg.png" alt="sedona-back"/>
         <div class="header__triangle-img"></div>
         <slot>
             <span class="header__content-caption">sedona</span>
