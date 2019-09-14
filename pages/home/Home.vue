@@ -31,7 +31,7 @@
                 <div class="home-content__caption-paragraph">укажите предполагаемые даты поезки и мыпокажем вам лучшие предложения гостиниц в седоне</div>
                 <button type="submit" class="home-content__motels-btn" @click.prevent="sendRequenst()">найти гостиницу</button>
             </div>
-            <img src="@/assets/map-desktop.png" class="home-content__map"/>
+            <img src="@/assets/map-desktop.png" class="home-content__map" alt="district-map"/>
         </div>
     </div>
 </template>

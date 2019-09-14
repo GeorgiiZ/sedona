@@ -1,6 +1,6 @@
 <template>
     <div class="sight-photo">
-        <img class="sight-photo__img" :src="sightPic.photoSrc"/>
+        <img class="sight-photo__img" :src="sightPic.photoSrc" :alt="sightPic.sightName"/>
         <div class="sight-photo__info">
             <div class="sight-photo__info-data">
                 <div class="sight-photo__info-name">{{ sightPic.sightName }}</div>

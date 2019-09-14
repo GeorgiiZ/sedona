@@ -8,7 +8,7 @@
             <div class="advantage-info__paragraph
                         advantage-info__paragraph_white">{{ advantage.desc }}</div>
         </div>
-        <img v-bind:class="['advantage-img', imgDisplay]" :src="getImgUrl(advantage.img)"/>
+        <img v-bind:class="['advantage-img', imgDisplay]" :src="getImgUrl(advantage.img)" :alt="advantage.name"/>
     </div>
 </template>
 
