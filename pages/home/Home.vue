@@ -107,24 +107,24 @@ svg {
     background: url("../../assets/sprite/sprite.svg#icon-house") no-repeat;
     background-position: center;
     background-size: cover; 
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 .icon-burger {
     background: url("../../assets/sprite/sprite.svg#icon-burger") no-repeat;
     background-position: center;
     background-size: cover; 
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 .icon-gift {
     background: url("../../assets/sprite/sprite.svg#icon-gift") no-repeat;
     background-position: center;
     background-size: cover; 
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 .home {
@@ -214,7 +214,6 @@ svg {
 .home-content__motels {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
     padding: 60px;
@@ -226,7 +225,6 @@ svg {
     text-transform: uppercase;
     font-weight: bold;
     font-size: var(--font-size__large);
-    text-align: center;
 }
 
 .home-content__motels-btn{
@@ -265,7 +263,6 @@ svg {
 
     .home-content__facts{
         flex-direction: column;
-        padding: 0 25px;
     }
 
     .home-content__fact{
@@ -276,10 +273,24 @@ svg {
 
     .home-content__fact-anvantage{
         border-bottom: 1px solid #bebebe; 
+        padding: 40px;
+    }
+
+    .home-content__caption {
+        padding: 50px;
     }
 
     .home-content__caption-header_narrow{
         max-width: none;
+    }
+
+    .home-content__motels {
+        max-width: 100%;
+        padding: 40px;
+    }
+
+    .home-content__motels-header {
+        font-size: 28px;
     }
 
     .icon-house {
