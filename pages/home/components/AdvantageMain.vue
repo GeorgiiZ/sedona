@@ -45,19 +45,10 @@ export default class AdvantageMain extends Vue {
     max-height: 256px;
 }
 
-.advantage-info {
-   background-color: #95c8d8;
-   padding: 80px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   text-align: center;
-   order: 1;
-}
-
 .advantage-img {
     object-fit: cover;
     order: 2;
+    max-width: 70%;
 }
 
 .advantage-info__header{
@@ -65,6 +56,17 @@ export default class AdvantageMain extends Vue {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
+    /* max-width: 30%; */
+}
+
+.advantage-info {
+   background-color: #95c8d8;
+   padding: 35px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   order: 1;
 }
 
 .advantage-info__header_white{
