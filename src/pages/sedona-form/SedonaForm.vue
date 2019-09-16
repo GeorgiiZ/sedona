@@ -354,11 +354,6 @@ export default class SedonaForm extends Vue {
     background-color: #eee;
 }
 
-.form__checkbox-custom {
-    width: 50px;
-    height: 50px;
-}
-
 .form__sights input:checked ~ .form__checkbox-custom {
     background: url("../../assets/sprite/sprite.svg#tick") no-repeat;
     width: 50px;
