@@ -28,7 +28,7 @@ export default class AdvantageMain extends Vue {
 
     @Prop({required: true}) advantage !: SedonaAdvantage;
 
-    @Prop(Number) number !:Number;
+    @Prop() number !:string;
     
     getImgUrl(img: string) {
         var images = require.context('../../../assets/', false, /\.png$/)

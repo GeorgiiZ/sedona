@@ -95,204 +95,192 @@ export default class Home extends Vue {
 }
 </script>
 
-<style>
+<style lang='scss'>
 
-svg {
-  width: 70px;
-  height: 70px;
-  fill: blue;
+.home {
+    display: flex;
+    flex-direction: column;
+
+    &-header {
+        flex: 1;
+        min-height: 500px;
+        &__caption {
+            position: absolute; 
+            background: url("../../assets/sprite/sprite.svg#text-index") no-repeat;
+            background-position: center;
+            background-size: cover; 
+            min-width: 350px;
+            height: 250px;
+        }
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+
+        &__caption {
+            padding: 70px;
+            margin: 0 auto;
+            max-width: 500px;
+            text-align: center;
+
+            &-header {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 20px;
+                text-align: center;
+
+                &_narrow {
+                    max-width: 150px;
+                }
+            }
+            &-paragraph {
+                text-transform: uppercase;
+                margin-top: 20px; 
+                line-height: 180%;
+            }
+        }
+
+        &__facts {
+            display: flex;
+            justify-content: space-between;
+
+            &-gray {
+                background-color: #eee;
+            }
+        }
+        &__fact {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 50px;
+
+            &-anvantage {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 50px;
+            }
+
+            &-img {
+                margin-bottom: 20px;
+            }
+
+            &-num{
+                margin-top: 20px;
+            }
+        }
+
+        &__motels {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+            margin: 0 auto;
+            max-width: 400px;
+
+            &-header {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: var(--font-size__large);
+            }
+
+            &-btn{
+                margin-top: 25px;
+                height: 50px;
+                border: none;
+                width: 100%;
+                background-color: #95c8d8;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: white;
+                cursor: pointer;
+                font-size: var(--font-size__middle);
+                outline: inherit;
+
+                &:hover {
+                    background-color:#57A0D3;
+                }
+
+                &:active {
+                    color: rgba(255,255,255, 0.5);
+                }
+
+            }
+        }
+
+        &__map{
+            width: 100%;
+            object-fit: cover;
+            object-position: 50% 100%;
+        }
+    }
 }
 
 .icon-house {
-    background: url("../../assets/sprite/sprite.svg#icon-house") no-repeat;
-    background-position: center;
-    background-size: cover; 
+    background: url("../../assets/sprite/sprite.svg#icon-house") no-repeat center;
+    background-size: cover;
     width: 45px;
     height: 45px;
 }
 
 .icon-burger {
-    background: url("../../assets/sprite/sprite.svg#icon-burger") no-repeat;
-    background-position: center;
+    background: url("../../assets/sprite/sprite.svg#icon-burger") no-repeat center;
     background-size: cover; 
     width: 45px;
     height: 45px;
 }
 
 .icon-gift {
-    background: url("../../assets/sprite/sprite.svg#icon-gift") no-repeat;
-    background-position: center;
-    background-size: cover; 
+    background: url("../../assets/sprite/sprite.svg#icon-gift") no-repeat center;
+    background-size: cover;
     width: 45px;
     height: 45px;
 }
 
-.home {
-    display: flex;
-    flex-direction: column;
-}
-
-.home-header {
-    flex: 1;
-    min-height: 500px;
-}
-
-.home-header__caption {
-    position: absolute; 
-    background: url("../../assets/sprite/sprite.svg#text-index") no-repeat;
-    background-position: center;
-    background-size: cover; 
-    min-width: 350px;
-    height: 250px;
-}
-
-.home-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.home-content__caption {
-    padding: 70px;
-    margin: 0 auto;
-    max-width: 500px;
-    text-align: center;
-}
-
-.home-content__caption-header {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-}
-
-.home-content__caption-header_narrow {
-    max-width: 150px;
-}
-
-.home-content__caption-paragraph {
-    text-transform: uppercase;
-    margin-top: 20px; 
-    line-height: 180%;
-}
-
-.home-content__facts {
-    display: flex;
-    justify-content: space-between;
-}
-
-.home-content__facts-gray {
-    background-color: #eee;
-}
-
-.home-content__fact {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 50px;
-}
-
-.home-content__fact-anvantage {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 50px;
-}
-
-
-.home-content__fact-img {
-    margin-bottom: 20px; 
-}
-
-.home-content__fact-num{
-    margin-top: 20px;
-}
-
-.home-content__motels {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 60px;
-    margin: 0 auto;
-    max-width: 400px;
-}
-
-.home-content__motels-header {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: var(--font-size__large);
-}
-
-.home-content__motels-btn{
-    margin-top: 25px;
-    height: 50px;
-    border: none;
-    width: 100%;
-    background-color: #95c8d8;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    font-size: var(--font-size__middle);
-    outline: inherit;
-}
-
-.home-content__motels-btn:hover {
-    background-color:#57A0D3;
-}
-
-.home-content__motels-btn:active {
-    color: rgba(255,255,255, 0.5);
-}
-
-.home-content__map{
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 100%;
-}
 
 @media(max-device-width: 480px){
-    .home-content__map{
-        min-height: 500px;
-        max-width: 450px;
-    }
 
-    .home-content__facts{
-        flex-direction: column;
-    }
+    .home{
+        &-content{
+            &__map{
+                min-height: 500px;
+                max-width: 450px;
+            }
+            &__facts{
+                flex-direction: column;
+            }
+            &__fact{
+                align-items: flex-start;
+                padding-left: 85px;
+                text-align: inherit;
 
-    .home-content__fact{
-        align-items: flex-start;
-        padding-left: 85px; 
-        text-align: inherit;
-    }
+                &-anvantage{
+                    border-bottom: 1px solid #bebebe;
+                    padding: 40px;
+                }
+            }
+            &__caption {
+                padding: 50px;
 
-    .home-content__fact-anvantage{
-        border-bottom: 1px solid #bebebe; 
-        padding: 40px;
-    }
+                &-header_narrow{
+                    max-width: none;
+                }
+            }
+            &__motels {
+                max-width: 100%;
+                padding: 40px;
 
-    .home-content__caption {
-        padding: 50px;
+                &-header {
+                    font-size: 28px;
+                }
+            }
+        }
     }
-
-    .home-content__caption-header_narrow{
-        max-width: none;
-    }
-
-    .home-content__motels {
-        max-width: 100%;
-        padding: 40px;
-    }
-
-    .home-content__motels-header {
-        font-size: 28px;
-    }
-
     .icon-house {
         position: absolute;
         left: 20px;
