@@ -133,7 +133,7 @@ export default class Layout extends Vue {
     position: absolute;
     top: 0;
     width: 230px;
-    height: 200px;
+    height: 100px;
     background: url(../assets/sprite/sprite.svg#logotype-desktop) no-repeat;
 }
 
