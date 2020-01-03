@@ -52,105 +52,113 @@ export default class SedonaPhotos extends Vue {
 
 </script>
 
-<style>
+<style lang="scss">
 
 .photos {
     display: flex;
     flex-direction: column;
+
+    &__header {
+        width: 100%;
+        height: 300px;
+    }
+
+    &__caption {
+        &-header {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: var(--font-size__large);
+        }
+        &-paragraph {
+            text-transform: uppercase;
+            margin-top: 25px;
+            line-height: 180%;
+        }
+    }
+
+    &__content {
+        &-caption {
+            max-width: 440px;
+            padding: 80px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        &-galary {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            /* align-content: flex-start; */
+        }
+
+        &-sight-pic {
+            display: flex;
+            min-height: 300px;
+        }
+    }
+
+    &__video {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        &-caption {
+            max-width: 440px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 80px;
+        }
+    }
+
+
 }
 
-.photos__header {
-    width: 100%;
-    height: 300px;
-}
-
-.photos__caption-header {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: var(--font-size__large);
-}
-
-.photos__caption-paragraph {
-    text-transform: uppercase;
-    margin-top: 25px; 
-    line-height: 180%;
-}
-
-.photos__content-caption {
-    max-width: 440px;
-    padding: 80px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.photos__content-galary {
-    display: flex;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    /* align-content: flex-start; */
-}
-
-
-.photos__video {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-}
-
-.photos__video-caption {
-    max-width: 440px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 80px;
-}
-
-.photos__content-sight-pic {
-    display: flex;
-    min-height: 300px;
-}
 
 @media (max-device-width:480px){
 
-    .photos__content-galary {
-        justify-content: center;
-    }
-
-    .photos__content-sight-pic {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-    }
-
-    .photos__video-content{
-        min-height: 300px;
+    .photos {
+        &__content {
+            &-galary {
+                justify-content: center;
+            }
+            &-sight-pic {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                border-top: 1px solid #eee;
+                border-bottom: 1px solid #eee;
+            }
+            &-caption{
+                padding: 50px;
+            }
+        }
+        &__video {
+            &-content{
+                min-height: 300px;
+            }
+            &-caption{
+                padding: 50px;
+            }
+        }
     }
     
     .footer-list__item {
         padding: 20px;
     }
 
-    .photos__content-caption{
-        padding: 50px;
-    }
-
-    .photos__video-caption{
-        padding: 50px;
-    }
-
 }
 
 @media (min-device-width: 481px) and (max-device-width:768px){
-    .photos-main {
-        display: flex;
-        padding: 0 25px ;
-    }
+    .photos{
+        &-main {
+            display: flex;
+            padding: 0 25px ;
+        }
 
-    .photos__content-galary {
-        max-width: 100%;
+        &__content-galary {
+            max-width: 100%;
+        }
     }
 }
 

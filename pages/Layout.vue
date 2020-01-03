@@ -69,7 +69,7 @@ export default class Layout extends Vue {
 
 .layout {
     background-color: white;
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
