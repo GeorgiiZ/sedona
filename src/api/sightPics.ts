@@ -1,5 +1,6 @@
 const images = require.context("../assets/", true, /\.png$/)
 
+
 const sightPics = [
     {
         sightName: 'неродные просторы',
