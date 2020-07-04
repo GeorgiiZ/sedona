@@ -29,7 +29,7 @@
             <div class="home-content__motels">
                 <div class="home-content__motels-header">заинтересовались?</div>
                 <div class="home-content__caption-paragraph">укажите предполагаемые даты поезки и мыпокажем вам лучшие предложения гостиниц в седоне</div>
-                <button type="submit" class="home-content__motels-btn" @click.prevent="sendRequenst()">найти гостиницу</button>
+                <button type="submit" class="home-content__motels-btn" @click.prevent="sendRequest()">найти гостиницу</button>
             </div>
             <img src="@/assets/map-desktop.png" class="home-content__map" alt="district-map"/>
         </div>
@@ -92,6 +92,7 @@ export default class Home extends Vue {
             img: 'photo-bridge'
         }
     ];
+    sendRequest(){}
 }
 </script>
 
